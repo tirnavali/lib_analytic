@@ -1,24 +1,23 @@
-# README
+# Library Analytics 
+This projects purpose setting well-generated library analytics platform for Academic or Special Libraries.
+On the other hand It's first purpose is to serve data to related Library.
+Maybe after its modules can be converted to general use for other libraries.
+If you know ruby on rails of course you can convert this project for your needs.
+This projects is heavily under development now.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Steps to run this program:
 
-* Ruby version
+* Ruby version 3.0.0
 
-* System dependencies
+* Sqlite3
 
-* Configuration
+* Rails version > 6
 
-* Database creation
+* 1 - Update yarn
+* 2 - bundle install
+* 3 - run with rails server command
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ Sercan Tırnavalı 08.02.2021
