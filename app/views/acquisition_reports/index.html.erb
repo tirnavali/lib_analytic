@@ -1,0 +1,18 @@
+<p>
+  <%= link_to 'Yeni Kayıt', new_acquisition_report_path%>
+</p>
+<% @acquisition_reports.each do |report|%>
+
+  <ul>
+    <li>
+      <%= report.reporter_identity%>
+      <%= report.date%>
+      <%= link_to 'Kayıda Git',  acquisition_report_path(report) %>
+    </li>
+  </ul>
+
+<% end %>
+
+<p>
+  <%= link_to 'Yeni Kayıt', new_acquisition_report_path%>
+</p>

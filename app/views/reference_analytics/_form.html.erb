@@ -1,0 +1,180 @@
+<%= form_with(model: reference_analytic, local: true) do |form| %>
+  <% if reference_analytic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reference_analytic.errors.count, "error") %> prohibited this reference_analytic from being saved:</h2>
+
+      <ul>
+        <% reference_analytic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reporter %>
+    <%= form.text_field :reporter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reporter_job_title %>
+    <%= form.text_field :reporter_job_title %>
+  </div>
+
+  
+
+  <div class="field">
+    <%= form.label :report_date %>
+    <%= form.date_field :report_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_from_out %>
+    <%= form.number_field :user_from_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_from_inside %>
+    <%= form.number_field :user_from_inside %>
+  </div>
+
+  <div class="field">
+    <%= form.label :online_patron_outer %>
+    <%= form.number_field :online_patron_outer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :online_patron_inner %>
+    <%= form.number_field :online_patron_inner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :open_access_sessions %>
+    <%= form.number_field :open_access_sessions %>
+  </div>
+  <div style="border: 1px solid grey;">
+    <div class="field">
+      <%= form.label :depot_book_usage %>
+      <%= form.number_field :depot_book_usage %>
+    </div>
+
+    <div class="field">
+      <%= form.label :depot_journal_usage %>
+      <%= form.number_field :depot_journal_usage %>
+    </div>
+
+    <div class="field">
+      <%= form.label :depot_newspaper_usage %>
+      <%= form.number_field :depot_newspaper_usage %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= form.label :book_on_loan %>
+    <%= form.number_field :book_on_loan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_renew %>
+    <%= form.number_field :book_renew %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_withdraw %>
+    <%= form.number_field :book_withdraw %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_on_loan_mp %>
+    <%= form.number_field :book_on_loan_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_on_loan_retired_mp %>
+    <%= form.number_field :book_on_loan_retired_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_on_loan_inner_patron %>
+    <%= form.number_field :book_on_loan_inner_patron %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_use_mp %>
+    <%= form.number_field :book_use_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_use_retired_mp %>
+    <%= form.number_field :book_use_retired_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_use_inner_patron %>
+    <%= form.number_field :book_use_inner_patron %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microfilm_use_mp %>
+    <%= form.number_field :microfilm_use_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microfilm_use_retired_mp %>
+    <%= form.number_field :microfilm_use_retired_mp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microfilm_use_inner_patron %>
+    <%= form.number_field :microfilm_use_inner_patron %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microfilm_use_outer_patron %>
+    <%= form.number_field :microfilm_use_outer_patron %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microfilm_income %>
+    <%= form.number_field :microfilm_income,  :step => "0.01" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photocopy_a4_unpaid %>
+    <%= form.number_field :photocopy_a4_unpaid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photocopy_a3_unpaid %>
+    <%= form.number_field :photocopy_a3_unpaid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photocopy_a4_paid %>
+    <%= form.number_field :photocopy_a4_paid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photocopy_a3_paid %>
+    <%= form.number_field :photocopy_a3_paid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :digitalized_pages %>
+    <%= form.number_field :digitalized_pages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photocopy_income %>
+    <%= form.number_field :photocopy_income, step: "0.01" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

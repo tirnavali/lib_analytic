@@ -1,0 +1,97 @@
+<%= form_with(model: journal_doc_report, local: true) do |form| %>
+  <% if journal_doc_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(journal_doc_report.errors.count, "error") %> prohibited this journal_doc_report from being saved:</h2>
+
+      <ul>
+        <% journal_doc_report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :journal_count %>
+    <%= form.number_field :journal_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_count %>
+    <%= form.number_field :document_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unique_subjects_given %>
+    <%= form.number_field :unique_subjects_given %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unique_author_given %>
+    <%= form.number_field :unique_author_given %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_given %>
+    <%= form.number_field :author_given %>
+  </div>
+
+  <div class="field">
+    <%= form.label :journal_doc_analytic_id %>
+    <%= form.text_field :journal_doc_analytic_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reporter %>
+    <%= form.text_field :reporter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_date %>
+    <%= form.date_select :report_date %>
+  </div>
+
+
+  <%= form.fields_for :acquisition_analytics do |analytics| %>
+    <div style="border: 2px solid red">
+      <div class="field">
+        <%= analytics.label :reporter %>
+        <%= analytics.text_field :reporter %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :report_date %>
+        <%= analytics.date_field :report_date %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :new_entry %>
+        <%= analytics.number_field :new_entry %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :updated_entry %>
+        <%= analytics.number_field :updated_entry %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :new_author %>
+        <%= analytics.number_field :new_author %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :new_subject %>
+        <%= analytics.number_field :new_subject %>
+      </div>
+    
+      <div class="field">
+        <%= analytics.label :select_personel %>
+        <%= analytics.collection_select :personel_id, Personel.all, :id, :name_with_initial %>
+      </div>
+    </div>
+    <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

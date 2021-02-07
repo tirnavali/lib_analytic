@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @journal_doc_analytic.reporter %>
+</p>
+
+<p>
+  <strong>Report date:</strong>
+  <%= @journal_doc_analytic.report_date %>
+</p>
+
+<p>
+  <strong>New record:</strong>
+  <%= @journal_doc_analytic.new_entry %>
+</p>
+
+<p>
+  <strong>Updated record:</strong>
+  <%= @journal_doc_analytic.updated_entry %>
+</p>
+
+<p>
+  <strong>New author:</strong>
+  <%= @journal_doc_analytic.new_author %>
+</p>
+
+<p>
+  <strong>New subject:</strong>
+  <%= @journal_doc_analytic.new_subject %>
+</p>
+
+<%= link_to 'Edit', edit_journal_doc_analytic_path(@journal_doc_analytic) %> |
+<%= link_to 'Back', journal_doc_analytics_path %>

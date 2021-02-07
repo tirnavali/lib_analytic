@@ -1,0 +1,4 @@
+<h1>Düzenleme sayfası</h1>
+<%= link_to 'Bu Kayıdı Sil', acquisition_report_path, method: :delete, data: {confirm: 'Emin misiniz'}%>
+<%= render 'form' %>
+<%= link_to 'Geri', acquisition_reports_path%>

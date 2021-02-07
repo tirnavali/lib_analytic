@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reporter: MyString
+  report_date: 2021-01-29
+  new_record: 1
+  updated_record: 1
+  new_author: 1
+  new_subject: 1
+
+two:
+  reporter: MyString
+  report_date: 2021-01-29
+  new_record: 1
+  updated_record: 1
+  new_author: 1
+  new_subject: 1

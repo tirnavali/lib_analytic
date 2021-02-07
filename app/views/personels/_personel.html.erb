@@ -1,0 +1,13 @@
+<% if personel.errors.any? %>
+    <% elsif %>
+    <tr>
+    <td><%= personel.name %></td>
+    <td><%= personel.surname %></td>
+    <td><%= link_to 'Show', personel %></td>
+    <td><%= link_to 'Edit', edit_personel_path(personel) %></td>
+    <td><%= link_to 'Destroy', personel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+
+  <% end %>
+
+

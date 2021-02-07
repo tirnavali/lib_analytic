@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Journal count:</strong>
+  <%= @journal_doc_report.journal_count %>
+</p>
+
+<p>
+  <strong>Document count:</strong>
+  <%= @journal_doc_report.document_count %>
+</p>
+
+<p>
+  <strong>Unique subjects given:</strong>
+  <%= @journal_doc_report.unique_subjects_given %>
+</p>
+
+<p>
+  <strong>Unique author given:</strong>
+  <%= @journal_doc_report.unique_author_given %>
+</p>
+
+<p>
+  <strong>Author given:</strong>
+  <%= @journal_doc_report.author_given %>
+</p>
+
+<p>
+  <strong>Journal doc analytic:</strong>
+  <%= @journal_doc_report.journal_doc_analytic_id %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @journal_doc_report.reporter %>
+</p>
+
+<p>
+  <strong>Report date:</strong>
+  <%= @journal_doc_report.report_date %>
+</p>
+
+<%= link_to 'Edit', edit_journal_doc_report_path(@journal_doc_report) %> |
+<%= link_to 'Back', journal_doc_reports_path %>

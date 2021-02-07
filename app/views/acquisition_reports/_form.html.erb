@@ -1,0 +1,56 @@
+<%= form_with(model: @acquisition_report, local: true) do |form| %>
+  <% if @acquisition_report.errors.any? %>
+    <div id="error-eplanation">
+      <h2>
+        <%= pluralize(@acquisition_report.errors.count, "error")%> prohibited this acquisition report from being saved:
+      </h2>
+      <ul>
+          <% @acquisition_report.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+  
+    </div>
+  <% end %>
+  <p>
+    <%=form.label :reporter_identity %><br/>
+    <%=form.text_field :reporter_identity %><br/>
+  </p>
+  <p>
+    <%=form.label :job_title %><br/>
+    <%=form.text_area :job_title %>
+  </p>
+  <p>
+    <%=form.label :posted_books %><br/>
+    <%=form.number_field :posted_books %>
+  </p>
+  <p>
+    <%=form.label :refactored_items %><br/>
+    <%=form.number_field :refactored_items %>
+  </p>
+  <p>
+    <%=form.label :note %><br/>
+    <%=form.text_area :note %>
+  </p>
+  <p>
+    <%=form.label :date %><br/>
+    <%=form.date_field :date %><br/>
+  </p>
+  
+  <%= form.fields_for :acquisition_analytics do |analytics| %>
+  <div style="border: 2px solid red">
+    <p>
+      <%= analytics.label :pub_arrived_as_supply%><br/>
+      <%= analytics.number_field :pub_arrived_as_supply%>
+    </p>
+    <p>
+      <%= analytics.label :pub_arrived_as_gift%><br/>
+      <%= analytics.number_field :pub_arrived_as_gift%>
+    </p>
+  </div>
+  <% end %>
+  
+  <p>
+    <%=form.submit %><br/>
+  </p>
+  <% end %>

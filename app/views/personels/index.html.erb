@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<ul id="errors">
+  
+</ul>
+
+<%= form_with(model: @personel, local: false) do |form| %>
+  <% if @personel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@personel.errors.count, "error") %> prohibited this personel from being saved:</h2>
+
+      <ul>
+        <% @personel.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surname %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit data: {disable_with: "Saving..."} %>
+  </div>
+<% end %>
+
+
+<h1>Personels</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody id="personels">
+<%= render @personels %>
+</tbody>
+<br>
+<%= link_to 'ORDER', personels_path(order: :asc) %>
+<%= link_to 'ORDER desc', personels_path(order: :desc) %>
+
+
+<script>
+var url = "http://localhost:3000/personels"
+
+var send = fetch(url, {
+  method: 'POST',
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+  body: JSON.stringify({
+    name: 'sekoo',
+    surname: 'bekooo',
+  })
+}).then(function(data){
+   console.log(data);
+}).catch(function(error){
+    console.log(error);
+});
+
+var sender = document.querySelector("#sender");
+sender.addEventListener("click", function(){
+  alert("click acquired");
+  send();
+
+
+});
+
+
+</script>

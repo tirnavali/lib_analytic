@@ -1,0 +1,2 @@
+module AcquisitionReportsHelper
+end

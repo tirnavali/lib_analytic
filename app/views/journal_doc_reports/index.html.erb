@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Journal Doc Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Journal count</th>
+      <th>Document count</th>
+      <th>Unique subjects given</th>
+      <th>Unique author given</th>
+      <th>Author given</th>
+      <th>Journal doc analytic</th>
+      <th>Reporter</th>
+      <th>Report date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journal_doc_reports.each do |journal_doc_report| %>
+      <tr>
+        <td><%= journal_doc_report.journal_count %></td>
+        <td><%= journal_doc_report.document_count %></td>
+        <td><%= journal_doc_report.unique_subjects_given %></td>
+        <td><%= journal_doc_report.unique_author_given %></td>
+        <td><%= journal_doc_report.author_given %></td>
+        <td><%= journal_doc_report.journal_doc_analytic_id %></td>
+        <td><%= journal_doc_report.reporter %></td>
+        <td><%= journal_doc_report.report_date %></td>
+        <td><%= link_to 'Show', journal_doc_report %></td>
+        <td><%= link_to 'Edit', edit_journal_doc_report_path(journal_doc_report) %></td>
+        <td><%= link_to 'Destroy', journal_doc_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journal Doc Report', new_journal_doc_report_path %>

@@ -1,0 +1,52 @@
+<%= form_with(model: journal_doc_analytic, local: true) do |form| %>
+  <% if journal_doc_analytic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(journal_doc_analytic.errors.count, "error") %> prohibited this journal_doc_analytic from being saved:</h2>
+
+      <ul>
+        <% journal_doc_analytic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reporter %>
+    <%= form.text_field :reporter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_date %>
+    <%= form.date_field :report_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_entry %>
+    <%= form.number_field :new_entry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_entry %>
+    <%= form.number_field :updated_entry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_author %>
+    <%= form.number_field :new_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_subject %>
+    <%= form.number_field :new_subject %>
+  </div>
+
+  <div class="field">
+    <%= form.label :select_personel %>
+    <%= form.collection_select :personel_id, Personel.all, :id, :name_with_initial %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

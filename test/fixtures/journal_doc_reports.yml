@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  journal_count: 1
+  document_count: 1
+  unique_subjects_given: 1
+  unique_author_given: 1
+  author_given: 1
+  journal_doc_analytic: one
+  reporter: MyString
+  report_date: 2021-02-04
+
+two:
+  journal_count: 1
+  document_count: 1
+  unique_subjects_given: 1
+  unique_author_given: 1
+  author_given: 1
+  journal_doc_analytic: two
+  reporter: MyString
+  report_date: 2021-02-04

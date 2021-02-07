@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acquisition_report: one
+  pub_arrived_as_supply: 1
+  pub_arrived_as_gift: 1
+  pub_bought: 1
+  pub_saved_as_supply: 1
+  pub_saved_as_gift: 1
+  pub_saved_as_old: 1
+
+two:
+  acquisition_report: two
+  pub_arrived_as_supply: 1
+  pub_arrived_as_gift: 1
+  pub_bought: 1
+  pub_saved_as_supply: 1
+  pub_saved_as_gift: 1
+  pub_saved_as_old: 1

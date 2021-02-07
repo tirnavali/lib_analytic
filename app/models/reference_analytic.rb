@@ -1,0 +1,2 @@
+class ReferenceAnalytic < ApplicationRecord
+end

@@ -1,0 +1,20 @@
+<h1>Detaylar</h1>
+<p>
+  <strong>Personal Info: </strong>
+  <%= @acquisition_report.reporter_identity %>
+</p>
+<p>
+  <strong>Job Title: </strong>
+  <%= @acquisition_report.job_title %>
+</p>
+<p>
+  <strong>Posted books </strong>
+  <%= @acquisition_report.posted_books %>
+</p>
+<p>
+  <strong>Notes </strong>
+  <%= @acquisition_report.note %>
+</p>
+
+<%= link_to 'Geriye Git', acquisition_reports_path %> 
+<%= link_to 'Düzenle', edit_acquisition_report_path %>
