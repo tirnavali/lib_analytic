@@ -19,7 +19,7 @@ class PersonelsController < ApplicationController
   # GET /personels/new
   def new
     @personel = Personel.new
-    @personel.new
+    
   end
 
   # GET /personels/1/edit
@@ -37,7 +37,7 @@ class PersonelsController < ApplicationController
         format.js
         format.json { render :index, status: :created, location: @personel }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Personel Error.'  }
         format.json { render json: @personel.errors, status: :unprocessable_entity }
         format.js
       end
