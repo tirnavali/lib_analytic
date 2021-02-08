@@ -1,6 +1,6 @@
 # Library Analytics 
-This projects purpose setting well-generated library analytics platform for Academic or Special Libraries.
-On the other hand It's first purpose is to serve data to related Library.
+This projects purpose is set well-generated library analytics platform for Academic or Special Libraries.
+On the other hand it's first purpose is serve data to related Library.
 Maybe after its modules can be converted to general use for other libraries.
 If you know ruby on rails of course you can convert this project for your needs.
 This projects is heavily under development now.
