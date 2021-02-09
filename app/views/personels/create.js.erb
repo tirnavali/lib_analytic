@@ -1,6 +1,6 @@
 var errors = document.querySelector("#errors");
 errors.replaceChildren("");
-<%# Eğer hata ekranı boşsa bir adet hata yaz %>
+
 if (errors.childElementCount == 0){ 
     errors.insertAdjacentHTML("beforeend", "<%= j render partial: '/personels/error' %>");
     var notice = document.querySelector("#notice");
