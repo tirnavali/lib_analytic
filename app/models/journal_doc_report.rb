@@ -1,3 +1,3 @@
 class JournalDocReport < ApplicationRecord
-  has_many :journal_doc_analytic
+  has_many :journal_doc_analytics
 end
