@@ -15,6 +15,12 @@ class JournalDocReportsController < ApplicationController
   # GET /journal_doc_reports/new
   def new
     @journal_doc_report = JournalDocReport.new
+    personel_count = Personel.all.count
+  # Personel sayısı kadar form açalım
+    personel_count.times do |counter|
+      @journal_doc_report.journal_doc_analytics.build({new_entry:  counter, personel_id: Personel.all[counter].id})   
+    end
+     
   end
 
   # GET /journal_doc_reports/1/edit

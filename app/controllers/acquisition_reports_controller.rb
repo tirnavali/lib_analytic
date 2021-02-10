@@ -2,7 +2,7 @@ class AcquisitionReportsController < ApplicationController
     def new
       #FIXME initial pub type değerler atansın yada formda göster
       @acquisition_report = AcquisitionReport.new
-      3.times { @acquisition_report.acquisition_analytics.build }
+      6.times { @acquisition_report.acquisition_analytics.build }
     end
 
     def edit

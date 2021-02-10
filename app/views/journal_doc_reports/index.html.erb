@@ -10,7 +10,7 @@
       <th>Unique subjects given</th>
       <th>Unique author given</th>
       <th>Author given</th>
-      <th>Journal doc analytic</th>
+      <th>Journal doc analytic count</th>
       <th>Reporter</th>
       <th>Report date</th>
       <th colspan="3"></th>
@@ -25,7 +25,7 @@
         <td><%= journal_doc_report.unique_subjects_given %></td>
         <td><%= journal_doc_report.unique_author_given %></td>
         <td><%= journal_doc_report.author_given %></td>
-        <td><%= journal_doc_report.journal_doc_analytic_id %></td>
+        <td><%= journal_doc_report.journal_doc_analytics.size %></td>
         <td><%= journal_doc_report.reporter %></td>
         <td><%= journal_doc_report.report_date %></td>
         <td><%= link_to 'Show', journal_doc_report %></td>

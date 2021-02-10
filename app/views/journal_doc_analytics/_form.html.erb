@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <h1>Deneme</h1>
   <div class="field">
-    <%= form.label :reporter %>
-    <%= form.text_field :reporter %>
+    <%= form.label :select_personel %>
+    <%= form.collection_select :personel_id, Personel.all, :id, :name_with_initial %>
   </div>
 
   <div class="field">
@@ -41,10 +41,7 @@
     <%= form.number_field :new_subject %>
   </div>
 
-  <div class="field">
-    <%= form.label :select_personel %>
-    <%= form.collection_select :personel_id, Personel.all, :id, :name_with_initial %>
-  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

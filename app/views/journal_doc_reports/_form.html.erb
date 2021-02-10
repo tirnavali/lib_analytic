@@ -36,12 +36,7 @@
     <%= form.number_field :author_given %>
   </div>
 
-  <div class="field">
-    <%= form.label :journal_doc_analytic_id %>
-    <%= form.text_field :journal_doc_analytic_id %>
-  </div>
-
-  <div class="field">
+   <div class="field">
     <%= form.label :reporter %>
     <%= form.text_field :reporter %>
   </div>
@@ -52,16 +47,16 @@
   </div>
 
 
-  <%= form.fields_for :acquisition_analytics do |analytics| %>
+  <%= form.fields_for :journal_doc_analytics do |analytics| %>
     <div style="border: 2px solid red">
-      <div class="field">
-        <%= analytics.label :reporter %>
-        <%= analytics.text_field :reporter %>
-      </div>
+    <div class="field">
+      <%= analytics.label :select_personel %>
+      <%= analytics.collection_select :personel_id, Personel.all, :id, :name_with_initial, html_options={:disabled => true} %>      
+    </div>
     
       <div class="field">
         <%= analytics.label :report_date %>
-        <%= analytics.date_field :report_date %>
+        <%= analytics.date_field :report_date, title: "deneme" %>
       </div>
     
       <div class="field">
@@ -82,12 +77,7 @@
       <div class="field">
         <%= analytics.label :new_subject %>
         <%= analytics.number_field :new_subject %>
-      </div>
-    
-      <div class="field">
-        <%= analytics.label :select_personel %>
-        <%= analytics.collection_select :personel_id, Personel.all, :id, :name_with_initial %>
-      </div>
+      </div>          
     </div>
     <% end %>
 
