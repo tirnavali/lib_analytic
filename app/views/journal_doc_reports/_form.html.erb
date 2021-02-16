@@ -51,7 +51,7 @@
     <div style="border: 2px solid red">
     <div class="field">
       <%= analytics.label :select_personel %>
-      <%= analytics.collection_select :personel_id, Personel.all, :id, :name_with_initial, html_options={:disabled => true} %>      
+      <%= analytics.collection_select :personel_id, Personel.all, :id, :name_with_initial, {}, disabled: true %>      
     </div>
     
       <div class="field">
