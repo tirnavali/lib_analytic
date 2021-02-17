@@ -10,27 +10,47 @@ class JournalDocReportsController < ApplicationController
   # GET /journal_doc_reports/1
   # GET /journal_doc_reports/1.json
   def show
+    @personel = Personel
+    personel_ids = Array.new
+    analytics = @journal_doc_report.journal_doc_analytics
+    analytics.each do |analytic| 
+       personel_ids << analytic.personel_id     
+    end
+    @personels = Personel.find(personel_ids)
   end
 
   # GET /journal_doc_reports/new
   def new
+    
     @journal_doc_report = JournalDocReport.new
     personel_count = Personel.all.count
-  # Personel sayısı kadar form açalım
-    personel_count.times do |counter|
-      @journal_doc_report.journal_doc_analytics.build({new_entry:  counter, personel_id: Personel.all[counter].id})   
+    if personel_count > 0
+      personel_count.times do |counter|
+        @journal_doc_report.journal_doc_analytics.build({new_entry:  counter, personel_id: Personel.all[counter].id}) 
+      end
     end
+  # Personel sayısı kadar form açalım
+      
+    
      
   end
 
   # GET /journal_doc_reports/1/edit
   def edit
+    #analytics = @journal_doc_report.journal_doc_analytics
+    #analytics.each do |analytic|
+
+    #end
+    # personel_count.times do |counter|
+    #   @journal_doc_report.journal_doc_analytics.build({new_entry:  counter, personel_id: Personel.all[counter].id}) 
+    # end
   end
 
   # POST /journal_doc_reports
   # POST /journal_doc_reports.json
   def create
     @journal_doc_report = JournalDocReport.new(journal_doc_report_params)
+    #puts "Personel id is : " + @journal_doc_report.journal_doc_analytics.find(2).personel
 
     respond_to do |format|
       if @journal_doc_report.save
@@ -76,6 +96,7 @@ class JournalDocReportsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def journal_doc_report_params
 #TODO Add relative model parameters to here
-      params.require(:journal_doc_report).permit(:journal_count, :document_count, :unique_subjects_given, :unique_author_given, :author_given, :journal_doc_analytic_id, :reporter, :report_date)
+      params.require(:journal_doc_report).permit(:journal_count, :document_count, :unique_subjects_given, :unique_author_given, :author_given, :journal_doc_analytic_id, :reporter, :report_date,
+        journal_doc_analytics_attributes: [:id, :reporter, :report_date, :new_entry, :updated_entry, :new_author, :new_subject, :personel_id ])
     end
 end

@@ -26,11 +26,6 @@
 </p>
 
 <p>
-  <strong>Journal doc analytic:</strong>
-  <%= @journal_doc_report.journal_doc_analytic_id %>
-</p>
-
-<p>
   <strong>Reporter:</strong>
   <%= @journal_doc_report.reporter %>
 </p>
@@ -39,6 +34,29 @@
   <strong>Report date:</strong>
   <%= @journal_doc_report.report_date %>
 </p>
+
+<hr>
+<table class="table">
+<thead>
+  <th>Personel</th>
+  <th>Yeni konu girişi</th>
+  <th>Güncellenen konu girişi</th>
+  <th>Yeni yazar girişi</th>
+  <th>Yeni konu girişi</th>
+
+</thead>
+<tbody>
+  <% @journal_doc_report.journal_doc_analytics.each_with_index do |analytic, i|%>
+  <tr>
+    <td><%= @personels[i].name_with_initial %></td>
+    <td><%= analytic.new_entry %></td>
+    <td><%= analytic.updated_entry %></td>
+    <td><%= analytic.new_author %></td>
+    <td><%= analytic.new_subject %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
 
 <%= link_to 'Edit', edit_journal_doc_report_path(@journal_doc_report) %> |
 <%= link_to 'Back', journal_doc_reports_path %>
