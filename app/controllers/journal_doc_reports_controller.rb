@@ -23,8 +23,7 @@ class JournalDocReportsController < ApplicationController
   end
 
   # GET /journal_doc_reports/new
-  def new
-    
+  def new    
     @journal_doc_report = JournalDocReport.new
     personel_count = Personel.all.count
     if personel_count > 0

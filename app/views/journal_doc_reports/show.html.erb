@@ -48,7 +48,8 @@
 <tbody>
   <% @journal_doc_report.journal_doc_analytics.each_with_index do |analytic, i|%>
   <tr>
-    <td><%= analytic.personel.name_with_initial %></td>
+  
+    <td><% if analytic.personel %><%= analytic.personel.name_with_initial %><% else %><span style="color: red"><%= "Deleted record" %></span> <% end %></td>
     <td><%= analytic.new_entry %></td>
     <td><%= analytic.updated_entry %></td>
     <td><%= analytic.new_author %></td>
