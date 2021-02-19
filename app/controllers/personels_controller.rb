@@ -33,6 +33,8 @@ class PersonelsController < ApplicationController
 
     respond_to do |format|
       if @personel.save
+#TODO Add success message for create personel command.
+        flash.now[:notice] = "Personel was successfully created."
         format.html { redirect_to @personels, notice: 'Personel was successfully created.' }
         format.js
         format.json { render :index, status: :created, location: @personel }
