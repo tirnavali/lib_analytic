@@ -10,13 +10,16 @@ class JournalDocReportsController < ApplicationController
   # GET /journal_doc_reports/1
   # GET /journal_doc_reports/1.json
   def show
+=begin
     @personel = Personel
     personel_ids = Array.new
     analytics = @journal_doc_report.journal_doc_analytics
     analytics.each do |analytic| 
        personel_ids << analytic.personel_id     
     end
-    @personels = Personel.find(personel_ids)
+    @personels = Personel.find(personel_ids) 
+    =HEY
+=end
   end
 
   # GET /journal_doc_reports/new

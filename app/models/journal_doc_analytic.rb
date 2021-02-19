@@ -1,4 +1,4 @@
 class JournalDocAnalytic < ApplicationRecord
-    belongs_to :journal_doc_report
-    has_one :personel
+    belongs_to :journal_doc_report # journal_doc_report_id
+    belongs_to :personel # personel_id    
 end
