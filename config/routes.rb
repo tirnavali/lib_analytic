@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :employments
+  resources :departments
   resources :journal_doc_reports
   resources :personels
   resources :journal_doc_analytics

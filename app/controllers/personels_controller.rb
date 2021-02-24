@@ -45,7 +45,6 @@ class PersonelsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /personels/1
   # PATCH/PUT /personels/1.json
   def update
@@ -78,6 +77,6 @@ class PersonelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def personel_params
-      params.require(:personel).permit(:name, :surname)
+      params.require(:personel).permit(:name, :surname, :active)
     end
 end

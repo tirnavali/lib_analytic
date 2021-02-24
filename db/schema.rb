@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_120739) do
+ActiveRecord::Schema.define(version: 2021_02_24_114026) do
 
   create_table "acquisition_analytics", force: :cascade do |t|
     t.integer "acquisition_report_id", null: false
@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 2021_02_19_120739) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employments", force: :cascade do |t|
+    t.integer "personel_id", null: false
+    t.integer "department_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_employments_on_department_id"
+    t.index ["personel_id"], name: "index_employments_on_personel_id"
   end
 
   create_table "journal_doc_analytics", force: :cascade do |t|
@@ -70,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_120739) do
     t.string "surname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active"
   end
 
   create_table "pub_types", force: :cascade do |t|
@@ -117,5 +135,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_120739) do
 
   add_foreign_key "acquisition_analytics", "acquisition_reports"
   add_foreign_key "acquisition_analytics", "pub_types"
+  add_foreign_key "employments", "departments"
+  add_foreign_key "employments", "personels"
   add_foreign_key "journal_doc_analytics", "personels"
 end
