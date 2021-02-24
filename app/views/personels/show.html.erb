@@ -10,5 +10,10 @@
   <%= @personel.surname %>
 </p>
 
+<p>
+  <strong>Work status:</strong>
+  <%if @personel.passive %> Passive <% else %> Active <% end %>
+</p>
+
 <%= link_to 'Edit', edit_personel_path(@personel) %> |
 <%= link_to 'Back', personels_path %>

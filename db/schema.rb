@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_114026) do
     t.string "surname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "active"
+    t.boolean "passive"
   end
 
   create_table "pub_types", force: :cascade do |t|

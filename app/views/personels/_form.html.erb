@@ -1,4 +1,4 @@
-<%= form_with(model: personel, local: false) do |form| %>
+<%= form_with(model: personel, local: true) do |form| %>
   <% if personel.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(personel.errors.count, "error") %> prohibited this personel from being saved:</h2>
@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active, checked: true %>
+    <%= form.label :passive %>
+    <%= form.check_box :passive, checked: false %>
   </div>
 
   <div class="actions">
