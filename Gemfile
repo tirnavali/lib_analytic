@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 # Adds faker data
 gem 'faker', '~>2.15.1'
 # Use Redis adapter to run Action Cable in production
+gem 'devise', '~> 4.7', '>= 4.7.3'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

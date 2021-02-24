@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <!--Added for devise-->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!--Added for devise-->
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,12 +31,16 @@
       <li class="nav-item">
         <a class="nav-link" href="<%=reference_analytics_path%>">Reference Reports</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="<%=journal_doc_reports_path%>">Journal Documentation Reports</a>
+      
+      <% if user_signed_in? %>
+      <li class="nav-item">        
+        <a class="nav-link " href="#<%=destroy_user_session_path%>">Logout</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="<%=personels_path%>">Personels</a>
+      <% else %>
+      <li class="nav-item">        
+        <a class="nav-link " href="<%=new_user_session_path%>">Login</a>
       </li>
+      <% end %>
     </ul>
   </div>
 </nav>
