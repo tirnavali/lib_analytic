@@ -1,2 +1,15 @@
-<h1>Welcome to library analytics</h1><span><%=Time.now.strftime("%d/%m/%Y %H:%M") %></span>
+<h1>Welcome to library analytics</h1>
+<span><%=Time.now.strftime("%d/%m/%Y %H:%M") %></span>
+
+<div>
+    <li>
+        <span>Referans analitikleri:</span> <%=@referance_analytics_count%>
+    </li>
+    <li>
+        <span>Dergi Dökümantasyon rapor sayısı:</span> <%=@journal_doc_report_count%>
+    </li>
+    <li>
+        <span>Dergi Dökümantasyon analitik sayısı:</span> <%=@journal_doc_report_count%>
+    </li>
+</div>
 
