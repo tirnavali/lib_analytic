@@ -18,7 +18,8 @@ class PersonelsController < ApplicationController
 
   # GET /personels/new
   def new
-    @personel = Personel.new
+    @personel = Personel.new    
+    @personel.employments.build
     
   end
 
@@ -35,13 +36,13 @@ class PersonelsController < ApplicationController
       if @personel.save
 #TODO Add success message for create personel command.
         flash.now[:notice] = "Personel was successfully created."
-        format.html { redirect_to @personels, notice: 'Personel was successfully created.' }
-        format.js
+        format.html { redirect_to @personel, notice: 'Personel was successfully created.' }
+        #format.js
         format.json { render :index, status: :created, location: @personel }
       else
         format.html { render :new, notice: 'Personel Error.'  }
         format.json { render json: @personel.errors, status: :unprocessable_entity }
-        format.js
+        #format.js
       end
     end
   end
@@ -77,6 +78,8 @@ class PersonelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def personel_params
-      params.require(:personel).permit(:name, :surname, :passive)
+      params.require(:personel).permit(:name, :surname, :passive,
+         employments_attributes: [:department_id, :start_date, :end_date])
+                                   
     end
 end

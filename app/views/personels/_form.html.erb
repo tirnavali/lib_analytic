@@ -26,7 +26,36 @@
     <%= form.check_box :passive, checked: false %>
   </div>
 
+  
+  <%#= form.fields_for :departments do |department_form| %>
+    <div class="field">
+      <%#= department_form.label :name %>
+      <%#= department_form.collection_select(:department_ids, Department.all, :id, :name_with_initial) %>
+      <%#= department_form.collection_select(:personel_id, Personel.all, :id, :name_with_initial, {}, disabled: false) %>  
+    </div>
+  <%# end %>
+  <%= form.fields_for :employments do |employment_form| %>
+    <div class="field">
+      <%= employment_form.label :name %>
+      <%= employment_form.collection_select(:department_id, Department.all, :id, :name_with_initial) %>
+   </div>
+    <div class="field">
+      <%= employment_form.label :start_date %>
+      <%= employment_form.date_field :start_date %>
+    </div>
+
+    <div class="field">
+      <%= employment_form.label :end_date %>
+      <%= employment_form.date_field :end_date %>
+    </div>
+  <% end %>
+    
+  
+
   <div class="actions">
     <%= form.submit data: {disable_with: "Saving..."} %>
   </div>
+
+
+
 <% end %>
