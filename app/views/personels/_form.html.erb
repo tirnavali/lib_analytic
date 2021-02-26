@@ -48,6 +48,8 @@
       <%= employment_form.label :end_date %>
       <%= employment_form.date_field :end_date %>
     </div>
+    Delete: <%= employment_form.check_box :_destroy %>
+    <%#= link_to 'Destroy', employment_form.employment, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
     
   

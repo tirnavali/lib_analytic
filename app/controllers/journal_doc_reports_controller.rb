@@ -99,6 +99,6 @@ class JournalDocReportsController < ApplicationController
     def journal_doc_report_params
 #TODO Add relative model parameters to here
       params.require(:journal_doc_report).permit(:journal_count, :document_count, :unique_subjects_given, :unique_author_given, :author_given, :journal_doc_analytic_id, :reporter, :report_date,
-        journal_doc_analytics_attributes: [:id, :reporter, :report_date, :new_entry, :updated_entry, :new_author, :new_subject, :personel_id ])
+        journal_doc_analytics_attributes: [:id, :reporter, :report_date, :new_entry, :updated_entry, :new_author, :new_subject, :personel_id, :_destroy])
     end
 end

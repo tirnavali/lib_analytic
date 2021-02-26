@@ -25,6 +25,7 @@ class PersonelsController < ApplicationController
 
   # GET /personels/1/edit
   def edit
+    
   end
 
   # POST /personels
@@ -79,7 +80,7 @@ class PersonelsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def personel_params
       params.require(:personel).permit(:name, :surname, :passive,
-         employments_attributes: [:department_id, :start_date, :end_date])
+         employments_attributes: [:id, :department_id, :start_date, :end_date, :_destroy])
                                    
     end
 end
