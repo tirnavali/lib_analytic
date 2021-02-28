@@ -1,6 +1,10 @@
 class PersonelsController < ApplicationController
   before_action :set_personel, only: [:show, :edit, :update, :destroy]
-
+  before_action :reset_form_size, except: [:edit]
+  attr_accessor :form_size
+  @form_size = 0
+ 
+  
   # GET /personels
   # GET /personels.json
   def index
@@ -24,7 +28,14 @@ class PersonelsController < ApplicationController
   end
 
   # GET /personels/1/edit
-  def edit
+  def edit      
+    if params[:form_size] && session[:form_size].to_i > 0
+      session[:form_size] += 1
+      session[:form_size].times { @personel.employments.build }
+    elsif params[:form_size] 
+      @personel.employments.build
+      session[:form_size] = 1
+    end
     
   end
 
@@ -54,6 +65,7 @@ class PersonelsController < ApplicationController
       if @personel.update(personel_params)
         format.html { redirect_to @personel, notice: 'Personel was successfully updated.' }
         format.json { render :show, status: :ok, location: @personel }
+        session[:form_size] = 0
       else
         format.html { render :edit }
         format.json { render json: @personel.errors, status: :unprocessable_entity }
@@ -75,6 +87,10 @@ class PersonelsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_personel
       @personel = Personel.find(params[:id])
+    end
+
+    def reset_form_size
+      session.delete(:form_size)
     end
 
     # Only allow a list of trusted parameters through.

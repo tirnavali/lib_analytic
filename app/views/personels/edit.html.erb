@@ -2,5 +2,6 @@
 
 <%= render 'form', personel: @personel %>
 
+<%= link_to 'Add New Field', edit_personel_path(@personel)+"?form_size=1" %>
 <%= link_to 'Show', @personel %> |
 <%= link_to 'Back', personels_path %>

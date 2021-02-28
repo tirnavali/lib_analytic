@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :passive %>
-    <%= form.check_box :passive, checked: false %>
+    <%= form.check_box :passive %>
   </div>
 
   
@@ -51,8 +51,6 @@
     Delete: <%= employment_form.check_box :_destroy %>
     <%#= link_to 'Destroy', employment_form.employment, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-    
-  
 
   <div class="actions">
     <%= form.submit data: {disable_with: "Saving..."} %>
