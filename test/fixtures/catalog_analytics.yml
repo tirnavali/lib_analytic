@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  new_record: 1
+  duplicate_record: 1
+  subject_record: 1
+  catalog_report: one
+  personel: one
+
+two:
+  new_record: 1
+  duplicate_record: 1
+  subject_record: 1
+  catalog_report: two
+  personel: two
