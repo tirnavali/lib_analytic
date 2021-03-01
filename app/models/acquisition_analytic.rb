@@ -1,4 +1,4 @@
 class AcquisitionAnalytic < ApplicationRecord
   belongs_to :acquisition_report
-  has_one :pub_type
+  belongs_to :pub_type, inverse_of: :acquisition_analytics
 end

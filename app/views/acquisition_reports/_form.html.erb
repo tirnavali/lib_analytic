@@ -37,15 +37,20 @@
     <%=form.date_field :date %><br/>
   </p>
   
-  <%= form.fields_for :acquisition_analytics do |analytics| %>
+  <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
   <div style="border: 2px solid red">
     <p>
-      <%= analytics.label :pub_arrived_as_supply%><br/>
-      <%= analytics.number_field :pub_arrived_as_supply%>
+      <%=acq_analytics.label :pub_type%><br/>
+      <%=acq_analytics.collection_select(:pub_type_id, PubType.all, :id, :to_s) %><br/>      
+
     </p>
     <p>
-      <%= analytics.label :pub_arrived_as_gift%><br/>
-      <%= analytics.number_field :pub_arrived_as_gift%>
+      <%= acq_analytics.label :pub_arrived_as_supply%><br/>
+      <%= acq_analytics.number_field :pub_arrived_as_supply%>
+    </p>
+    <p>
+      <%= acq_analytics.label :pub_arrived_as_gift%><br/>
+      <%= acq_analytics.number_field :pub_arrived_as_gift%>
     </p>
   </div>
   <% end %>
