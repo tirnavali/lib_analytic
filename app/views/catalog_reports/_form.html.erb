@@ -1,0 +1,62 @@
+<%= form_with(model: catalog_report, local: true) do |form| %>
+  <% if catalog_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(catalog_report.errors.count, "error") %> prohibited this catalog_report from being saved:</h2>
+
+      <ul>
+        <% catalog_report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :report_date %>
+    <%= form.date_field :report_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reporter %>
+    <%= form.text_field :reporter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reporter_title %>
+    <%= form.text_field :reporter_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <%= form.fields_for :catalog_analytics do|analytic_form| %>
+  <div>
+    <%= analytic_form.label :personel %>
+    <%= analytic_form.collection_select(:personel_id, Personel.all, :id, :name_with_initial) %>
+  </div>
+
+  <div>  
+    <%= analytic_form.label :new_entry %>
+    <%= analytic_form.number_field :new_entry %>
+  </div>
+
+  <div>  
+    <%= analytic_form.label :duplicate_entry %>
+    <%= analytic_form.number_field :duplicate_entry %>
+  </div>
+
+  <div>  
+    <%= analytic_form.label :subject_entry %>
+    <%= analytic_form.number_field :subject_entry %>
+  </div>
+
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <%= link_to :add_catalog,  new_catalog_report_path + "?analytic_form_count=1"%>
+<% end %>

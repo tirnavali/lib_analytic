@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_143938) do
+ActiveRecord::Schema.define(version: 2021_03_01_112058) do
 
   create_table "acquisition_analytics", force: :cascade do |t|
     t.integer "acquisition_report_id", null: false
@@ -34,6 +34,27 @@ ActiveRecord::Schema.define(version: 2021_02_28_143938) do
     t.integer "refactored_items"
     t.text "note"
     t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "catalog_analytics", force: :cascade do |t|
+    t.integer "new_entry"
+    t.integer "duplicate_entry"
+    t.integer "subject_entry"
+    t.integer "catalog_report_id", null: false
+    t.integer "personel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["catalog_report_id"], name: "index_catalog_analytics_on_catalog_report_id"
+    t.index ["personel_id"], name: "index_catalog_analytics_on_personel_id"
+  end
+
+  create_table "catalog_reports", force: :cascade do |t|
+    t.date "report_date"
+    t.string "reporter"
+    t.string "reporter_title"
+    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -141,13 +162,14 @@ ActiveRecord::Schema.define(version: 2021_02_28_143938) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "roles"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "acquisition_analytics", "acquisition_reports"
   add_foreign_key "acquisition_analytics", "pub_types"
+  add_foreign_key "catalog_analytics", "catalog_reports"
+  add_foreign_key "catalog_analytics", "personels"
   add_foreign_key "employments", "departments"
   add_foreign_key "employments", "personels"
   add_foreign_key "journal_doc_analytics", "personels"

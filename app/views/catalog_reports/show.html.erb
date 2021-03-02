@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Report date:</strong>
+  <%= @catalog_report.report_date %>
+</p>
+
+<p>
+  <strong>Reporter:</strong>
+  <%= @catalog_report.reporter %>
+</p>
+
+<p>
+  <strong>Reporter title:</strong>
+  <%= @catalog_report.reporter_title %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @catalog_report.notes %>
+</p>
+
+<%= link_to 'Edit', edit_catalog_report_path(@catalog_report) %> |
+<%= link_to 'Back', catalog_reports_path %>

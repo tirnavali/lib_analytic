@@ -13,44 +13,52 @@
     </div>
   <% end %>
   <p>
-    <%=form.label :reporter_identity %><br/>
-    <%=form.text_field :reporter_identity %><br/>
+    <%=form.label :reporter_identity, class: "form-text" %><br/>
+    <%=form.text_field :reporter_identity, class: "form-control", placeholder: "Ms. Smith" %><br/>
   </p>
   <p>
     <%=form.label :job_title %><br/>
-    <%=form.text_area :job_title %>
+    <%=form.text_field :job_title, class: "form-control" %>
   </p>
   <p>
     <%=form.label :posted_books %><br/>
-    <%=form.number_field :posted_books %>
+    <%=form.number_field :posted_books, class: "form-control" %>
   </p>
   <p>
     <%=form.label :refactored_items %><br/>
-    <%=form.number_field :refactored_items %>
+    <%=form.number_field :refactored_items, class: "form-control" %>
   </p>
   <p>
     <%=form.label :note %><br/>
-    <%=form.text_area :note %>
+    <%=form.text_area :note, class: "form-control" %>
   </p>
   <p>
     <%=form.label :date %><br/>
-    <%=form.date_field :date %><br/>
+    <%=form.date_field :date, class: "form-control" %><br/>
   </p>
   
-  <%= form.fields_for :acquisition_analytics do |analytics| %>
+  <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
   <div style="border: 2px solid red">
     <p>
-      <%= analytics.label :pub_arrived_as_supply%><br/>
-      <%= analytics.number_field :pub_arrived_as_supply%>
+      <%=acq_analytics.label :pub_type%><br/>
+      <%=acq_analytics.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %><br/>      
+
     </p>
     <p>
-      <%= analytics.label :pub_arrived_as_gift%><br/>
-      <%= analytics.number_field :pub_arrived_as_gift%>
+      <%= acq_analytics.label :pub_arrived_as_supply%><br/>
+      <%= acq_analytics.number_field :pub_arrived_as_supply , class: "form-control"%>
+    </p>
+    <p>
+      <%= acq_analytics.label :pub_arrived_as_gift%><br/>
+      <%= acq_analytics.number_field :pub_arrived_as_gift , class: "form-control"%>
+    </p>
+    <p>
+       <%=acq_analytics.check_box :_destroy , class: "form-check-input" %> Delete this record
     </p>
   </div>
   <% end %>
   
   <p>
-    <%=form.submit %><br/>
+    <%=form.submit class: "btn btn-success"%><br/>
   </p>
   <% end %>

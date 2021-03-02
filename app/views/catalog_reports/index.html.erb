@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Catalog Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Report date</th>
+      <th>Reporter</th>
+      <th>Reporter title</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalog_reports.each do |catalog_report| %>
+      <tr>
+        <td><%= catalog_report.report_date %></td>
+        <td><%= catalog_report.reporter %></td>
+        <td><%= catalog_report.reporter_title %></td>
+        <td><%= catalog_report.notes %></td>
+        <td><%= link_to 'Show', catalog_report %></td>
+        <td><%= link_to 'Edit', edit_catalog_report_path(catalog_report) %></td>
+        <td><%= link_to 'Destroy', catalog_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Catalog Report', new_catalog_report_path %>
