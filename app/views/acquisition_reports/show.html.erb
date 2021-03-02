@@ -15,6 +15,34 @@
   <strong>Notes </strong>
   <%= @acquisition_report.note %>
 </p>
+<table border="1">
+  <thead>
+    <th>Publication type</th>
+    <th>Arrived as supply</th>
+    <th>Arrived as gift</th>
+    <th>Arrived as supply</th>
+    <th>Purchased</th>
+    <th>Saved as supply</th>
+    <th>Saved as gift</th>
+    <th>Saved as old</th>
+
+  </thead>
+  <tbody>
+  <% @acquisition_report.acquisition_analytics.each do |analytic|  %>
+    <tr>
+    <td>book olsun</td>
+    <td><%= analytic.pub_arrived_as_supply %></td>
+    <td><%= analytic.pub_arrived_as_gift %></td>
+    <td><%= analytic.pub_bought %></td>
+    <td><%= analytic.pub_saved_as_supply %></td>
+    <td><%= analytic.pub_saved_as_gift %></td>
+    <td><%= analytic.pub_saved_as_old %></td>
+
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
 
 <%= link_to 'Geriye Git', acquisition_reports_path %> 
 <%= link_to 'Düzenle', edit_acquisition_report_path %>

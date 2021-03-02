@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :report_date %>
-    <%= form.date_select :report_date %>
+    <%= form.date_field :report_date %>
   </div>
 
   <div class="field">
@@ -57,4 +57,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <%= link_to :add_catalog,  new_catalog_report_path + "?analytic_form_count=1"%>
 <% end %>

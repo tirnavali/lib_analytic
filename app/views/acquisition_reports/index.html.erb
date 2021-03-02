@@ -1,18 +1,23 @@
+<div>
+<h1>Acquisition Reports</h1>
+<table>
+  <thead>
+    <th>Report Date</th>
+    <th>Reporter Identity</th>
+    <th>Created At</th>
+  </thead>
+  <tbody>
+  <% @acquisition_reports.each do |report|%>
+    <tr>
+      <td> <%= report.date%> </td>
+      <td> <%= report.reporter_identity%> </td>
+      <td> <%= report.created_at.strftime("%d.%m.%Y | %H:%M")%></td>
+      <td> <%= link_to 'Kayıda Git',  acquisition_report_path(report) %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 <p>
-  <%= link_to 'Yeni Kayıt', new_acquisition_report_path%>
+  <%= link_to 'New Acquisition Report', new_acquisition_report_path%>
 </p>
-<% @acquisition_reports.each do |report|%>
-
-  <ul>
-    <li>
-      <%= report.reporter_identity%>
-      <%= report.date%>
-      <%= link_to 'Kayıda Git',  acquisition_report_path(report) %>
-    </li>
-  </ul>
-
-<% end %>
-
-<p>
-  <%= link_to 'Yeni Kayıt', new_acquisition_report_path%>
-</p>
+</div>
