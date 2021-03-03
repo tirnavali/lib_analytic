@@ -1,6 +1,6 @@
 <%= form_with(model: @acquisition_report, local: true) do |form| %>
   <% if @acquisition_report.errors.any? %>
-    <div id="error-eplanation">
+    <div id="error-explanation">
       <h2>
         <%= pluralize(@acquisition_report.errors.count, "error")%> prohibited this acquisition report from being saved:
       </h2>
@@ -38,7 +38,7 @@
   </p>
   
   <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
-  <div style="border: 2px solid red">
+  <div id="inner_form" style="border: 2px solid red">
     <p>
       <%=acq_analytics.label :pub_type%><br/>
       <%=acq_analytics.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %><br/>      
@@ -61,5 +61,5 @@
   <p>
     <%= link_to "Add New Analytic", "?form_size=1", class: "btn btn-warning" %><%=form.submit class: "btn btn-success"%><br/>
   </p>
-  <p></p>
+  <div class= "btn btn-warning" id="add_new_field">Add New Field</div>
   <% end %>

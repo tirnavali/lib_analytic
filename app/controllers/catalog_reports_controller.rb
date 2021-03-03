@@ -1,7 +1,7 @@
 class CatalogReportsController < ApplicationController
   before_action :set_catalog_report, only: [:show, :edit, :update, :destroy]
   before_action :reset_form_size, except: [:edit, :new]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+#  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
   # GET /catalog_reports
   def index

@@ -2,15 +2,16 @@ class AcquisitionReportsController < ApplicationController
   before_action :set_acquisition_report, only: [:show, :edit, :update, :destroy] 
   before_action :reset_form_size, except: [:edit, :new]
 
-    def new
-      #FIXME initial pub type değerler atansın yada formda göster
-      @acquisition_report = AcquisitionReport.new
-      3.times { @acquisition_report.acquisition_analytics.build }
+    def new      
+#FIXME initial pub type değerler atansın yada formda göster
+      @acquisition_report = AcquisitionReport.new     
+      @acquisition_report.acquisition_analytics.build
+      #build_forms(params[:form_size], true)      
     end
 
     def edit
       #@acquisition_report = AcquisitionReport.find(params[:id])  
-      build_forms(params[:form_size])   
+      build_forms(params[:form_size],false)   
     end
 
     def create
@@ -61,14 +62,17 @@ class AcquisitionReportsController < ApplicationController
         @acquisition_report = AcquisitionReport.find(params[:id])
       end
 
-      def build_forms(size)
+      def build_forms(size, isNew)
         size = size.to_i
-        if size && session[:analytic_form_count].to_i > 0
+        if size && session[:analytic_form_count] 
           session[:analytic_form_count] += 1
           session[:analytic_form_count].times { @acquisition_report.acquisition_analytics.build }
-        else size == 1
-          session[:analytic_form_count] = 1
-          @acquisition_report.acquisition_analytics.build
+        elsif size == 1          
+          session[:analytic_form_count] = 0   
+           
+        elsif isNew
+          @acquisition_report.acquisition_analytics.build     
+          session[:analytic_form_count] = 1 
         end
       end
   
