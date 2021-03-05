@@ -36,27 +36,12 @@
     <%=form.label :date %><br/>
     <%=form.date_field :date, class: "form-control" %><br/>
   </p>
-  
+  <fieldset>
   <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
-  <div id="inner_form" style="border: 2px solid red">
-    <p>
-      <%=acq_analytics.label :pub_type%><br/>
-      <%=acq_analytics.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %><br/>      
-
-    </p>
-    <p>
-      <%= acq_analytics.label :pub_arrived_as_supply%><br/>
-      <%= acq_analytics.number_field :pub_arrived_as_supply , class: "form-control"%>
-    </p>
-    <p>
-      <%= acq_analytics.label :pub_arrived_as_gift%><br/>
-      <%= acq_analytics.number_field :pub_arrived_as_gift , class: "form-control"%>
-    </p>
-    <p>
-       <%=acq_analytics.check_box :_destroy , class: "form-check-input" %> Delete this record
-    </p>
-  </div>
+  <%= render 'analytic_fields', f: acq_analytics %>   
   <% end %>
+  
+  </fieldset>
   
   <p>
     <%= link_to "Add New Analytic", "?form_size=1", class: "btn btn-warning" %><%=form.submit class: "btn btn-success"%><br/>

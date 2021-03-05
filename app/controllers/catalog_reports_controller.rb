@@ -15,8 +15,9 @@ class CatalogReportsController < ApplicationController
   # GET /catalog_reports/new
   def new
     @catalog_report = CatalogReport.new
+    #@catalog_report.catalog_analytics.build
 
-    build_forms(params[:analytic_form_count])
+    #build_forms(params[:analytic_form_count])
 
     # analytic_form_count = params[:analytic_form_count].to_i
     # if params[:analytic_form_count] && session[:analytic_form_count].to_i > 0

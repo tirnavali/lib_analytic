@@ -1,0 +1,18 @@
+<div>    
+    <p>
+      <%=f.label :pub_type%><br/>
+      <%=f.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %><br/>      
+    </p>
+    <p>
+      <%= f.label :pub_arrived_as_supply%><br/>
+      <%= f.number_field :pub_arrived_as_supply , class: "form-control"%>
+    </p>
+    <p>
+      <%= f.label :pub_arrived_as_gift%><br/>
+      <%= f.number_field :pub_arrived_as_gift , class: "form-control"%>
+    </p>
+    <p>
+       <%=f.check_box :_destroy , class: "form-check-input" %> Delete this record
+    </p>
+    <%= link_to "Add New Form", "#" %>
+  </div>
