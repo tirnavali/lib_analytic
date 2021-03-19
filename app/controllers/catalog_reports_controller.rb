@@ -27,8 +27,6 @@ class CatalogReportsController < ApplicationController
     #   session[:analytic_form_count] = 1
     #   @catalog_report.catalog_analytics.build
     # end
-
-
   end
 
   # GET /catalog_reports/1/edit

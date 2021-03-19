@@ -12,39 +12,49 @@
   
     </div>
   <% end %>
+  
   <p>
     <%=form.label :reporter_identity, class: "form-text" %><br/>
     <%=form.text_field :reporter_identity, class: "form-control", placeholder: "Ms. Smith" %><br/>
   </p>
+  
   <p>
     <%=form.label :job_title %><br/>
     <%=form.text_field :job_title, class: "form-control" %>
   </p>
+  
   <p>
     <%=form.label :posted_books %><br/>
     <%=form.number_field :posted_books, class: "form-control" %>
   </p>
+  
   <p>
     <%=form.label :refactored_items %><br/>
     <%=form.number_field :refactored_items, class: "form-control" %>
   </p>
+  
   <p>
     <%=form.label :note %><br/>
     <%=form.text_area :note, class: "form-control" %>
   </p>
+  
   <p>
     <%=form.label :date %><br/>
     <%=form.date_field :date, class: "form-control" %><br/>
   </p>
-  <fieldset>
-  <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
-  <%= render 'analytic_fields', f: acq_analytics %>   
-  <% end %>
   
-  </fieldset>
+  <%= link_to_add_nested(form, :acquisition_analytics, '#acquisition-analytics', link_classes: 'btn btn-primary',  link_text: "Add New Acquisition Analytic") %>
+  
+  <div id="acquisition-analytics">
+    <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
+      <%= render 'acquisition_analytic_fields', form: acq_analytics %>   
+    <% end %>    
+  </div>
   
   <p>
     <%= link_to "Add New Analytic", "?form_size=1", class: "btn btn-warning" %><%=form.submit class: "btn btn-success"%><br/>
   </p>
+  
   <div class= "btn btn-warning" id="add_new_field">Add New Field</div>
+  
   <% end %>

@@ -27,6 +27,9 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 # authorization gem
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+#Nested form helper
+gem 'vanilla_nested'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

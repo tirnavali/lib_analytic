@@ -193,6 +193,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
+    vanilla_nested (1.2.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -237,6 +238,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
+  vanilla_nested
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
