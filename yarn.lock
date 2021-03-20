@@ -7334,7 +7334,7 @@ validate-npm-package-license@^3.0.1:
 
 vanilla-nested@arielj/vanilla-nested:
   version "1.0.0"
-  resolved "https://codeload.github.com/arielj/vanilla-nested/tar.gz/39e00b43e4aad551233d56e4915c6c7615aedc11"
+  resolved "https://codeload.github.com/arielj/vanilla-nested/tar.gz/13f21de4d8c4efcce8261b688adff4db3d708a8e"
 
 vary@~1.1.2:
   version "1.1.2"
