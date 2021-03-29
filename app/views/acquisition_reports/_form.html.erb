@@ -50,11 +50,9 @@
       <%= render 'acquisition_analytic_fields', form: acq_analytics %>   
     <% end %>    
   </div>
+  <%=form.submit class: "btn btn-success"%>
   
-  <p>
-    <%= link_to "Add New Analytic", "?form_size=1", class: "btn btn-warning" %><%=form.submit class: "btn btn-success"%><br/>
-  </p>
   
-  <div class= "btn btn-warning" id="add_new_field">Add New Field</div>
+  
   
   <% end %>

@@ -5,6 +5,8 @@
     <th>Report Date</th>
     <th>Reporter Identity</th>
     <th>Created At</th>
+    <th>Posted books</th>
+
   </thead>
   <tbody>
   <% @acquisition_reports.each do |report|%>
@@ -12,12 +14,14 @@
       <td> <%= report.date%> </td>
       <td> <%= report.reporter_identity%> </td>
       <td> <%= report.created_at.strftime("%d.%m.%Y | %H:%M")%></td>
-      <td> <%= link_to 'Kayıda Git',  acquisition_report_path(report) %> </td>
+      <td class="text-right"> <%= report.posted_books%></td>
+
+      <td> <%= link_to 'Kayıda Git',  acquisition_report_path(report), class: "btn btn-info btn-sm" %> </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 <p>
-  <%= link_to 'New Acquisition Report', new_acquisition_report_path, class: "btn btn-primary"%>
+  <%= link_to 'New Acquisition Report', new_acquisition_report_path, class: "btn btn-primary btn-sm"%>
 </p>
 </div>

@@ -8,11 +8,15 @@
   <%= @acquisition_report.job_title %>
 </p>
 <p>
-  <strong>Posted books </strong>
+  <strong>Posted books: </strong>
   <%= @acquisition_report.posted_books %>
 </p>
 <p>
-  <strong>Notes </strong>
+  <strong>Refactored items: </strong>
+  <%= @acquisition_report.refactored_items %>
+</p>
+<p>
+  <strong>Notes: </strong>
   <%= @acquisition_report.note %>
 </p>
 <table class="table">
@@ -20,7 +24,6 @@
     <th>Publication type</th>
     <th>Arrived as supply</th>
     <th>Arrived as gift</th>
-    <th>Arrived as supply</th>
     <th>Purchased</th>
     <th>Saved as supply</th>
     <th>Saved as gift</th>
@@ -30,7 +33,7 @@
   <tbody>
   <% @acquisition_report.acquisition_analytics.each do |analytic|  %>
     <tr>
-    <td>book olsun</td>
+    <td><%= analytic.pub_type %></td>
     <td><%= analytic.pub_arrived_as_supply %></td>
     <td><%= analytic.pub_arrived_as_gift %></td>
     <td><%= analytic.pub_bought %></td>
@@ -46,3 +49,4 @@
 
 <%= link_to 'Geriye Git', acquisition_reports_path,  class: "btn btn-light btn-sm"%> 
 <%= link_to 'Düzenle', edit_acquisition_report_path, class: "btn btn-warning btn-sm" %>
+<%= link_to 'Bu Kayıdı Sil', acquisition_report_path, method: :delete, data: {confirm: 'Emin misiniz'}, class: "btn btn-danger btn-sm"%>

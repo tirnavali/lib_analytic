@@ -1,6 +1,6 @@
 class AcquisitionReportsController < ApplicationController
   before_action :set_acquisition_report, only: [:show, :edit, :update, :destroy] 
-  before_action :reset_form_size, except: [:edit, :new]
+  #before_action :reset_form_size, except: [:edit, :new]
 
     def new      
 #FIXME initial pub type değerler atansın yada formda göster
@@ -54,7 +54,14 @@ class AcquisitionReportsController < ApplicationController
       def acquisition_report_params
         #TODO Diğer anayltics attributes eklenecek. Şu an sadece iki tane var.
         params.require(:acquisition_report).permit(:reporter_identity, :job_title, :posted_books, :refactored_items, :note, :date, 
-          acquisition_analytics_attributes: [:id, :pub_arrived_as_supply, :pub_arrived_as_gift, :pub_type_id, :_destroy],
+          acquisition_analytics_attributes: [:id, :pub_arrived_as_supply,
+                                                  :pub_arrived_as_gift,
+                                                  :pub_bought,
+                                                  :pub_saved_as_gift,
+                                                  :pub_saved_as_supply,
+                                                  :pub_saved_as_old, 
+                                                  :pub_type_id, 
+                                                  :_destroy],
           pub_type_attributes: [:id, :pub_type_name])
       end
 
