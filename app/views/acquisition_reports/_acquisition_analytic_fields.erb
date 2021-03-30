@@ -1,33 +1,35 @@
-<div class="wrapper-div">    
-  <p>
-    <%=form.label :pub_type%><br/>
-    <%=form.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %><br/>    
-  </p>
-  <p>
-    <%= form.label :pub_arrived_as_supply%><br/>
-    <%= form.number_field :pub_arrived_as_supply , class: "form-control"%>
-  </p>
-  <p>
-    <%= form.label :pub_arrived_as_gift%><br/>
-    <%= form.number_field :pub_arrived_as_gift , class: "form-control"%>
-  </p>  
-  <p>
-    <%= form.label :pub_bought%><br/>
-    <%= form.number_field :pub_bought , class: "form-control"%>
-  </p> 
-  <p>
-    <%= form.label :pub_saved_as_supply%><br/>
-    <%= form.number_field :pub_saved_as_supply , class: "form-control"%>
-  </p> 
-  <p>
-    <%= form.label :pub_saved_as_gift%><br/>
-    <%= form.number_field :pub_saved_as_gift , class: "form-control"%>
-  </p> 
-  <p>
-    <%= form.label :pub_saved_as_old%><br/>
-    <%= form.number_field :pub_saved_as_old , class: "form-control"%>
-  </p> 
-  <p>
-     <%= link_to_remove_nested(form, fields_wrapper_selector: '.wrapper-div', link_text: "Remove Acquisition Analytic", link_classes: 'btn btn-danger') %>
-  </p>   
+<div class="">
+  <div class="wrapper-div col-16 p-3">    
+    <p>
+      <%=form.label :pub_type%>
+      <%=form.collection_select(:pub_type_id, PubType.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %>    
+    </p>
+    <p>
+      <%= form.label :pub_arrived_as_supply%>
+      <%= form.number_field :pub_arrived_as_supply , class: "form-control"%>
+    </p>
+    <p>
+      <%= form.label :pub_arrived_as_gift%>
+      <%= form.number_field :pub_arrived_as_gift , class: "form-control"%>
+    </p>  
+    <p>
+      <%= form.label :pub_bought%>
+      <%= form.number_field :pub_bought , class: "form-control"%>
+    </p> 
+    <p>
+      <%= form.label :pub_saved_as_supply%>
+      <%= form.number_field :pub_saved_as_supply , class: "form-control"%>
+    </p> 
+    <p>
+      <%= form.label :pub_saved_as_gift%>
+      <%= form.number_field :pub_saved_as_gift , class: "form-control"%>
+    </p> 
+    <p>
+      <%= form.label :pub_saved_as_old%>
+      <%= form.number_field :pub_saved_as_old , class: "form-control"%>
+    </p> 
+    <p>
+       <%= link_to_remove_nested(form, fields_wrapper_selector: '.wrapper-div', link_text: "Remove Acquisition Analytic", link_classes: 'btn btn-danger') %>
+    </p>   
+  </div>
 </div>

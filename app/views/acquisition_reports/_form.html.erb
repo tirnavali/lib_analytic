@@ -12,44 +12,43 @@
   
     </div>
   <% end %>
-  
   <p>
-    <%=form.label :reporter_identity, class: "form-text" %><br/>
-    <%=form.text_field :reporter_identity, class: "form-control", placeholder: "Ms. Smith" %><br/>
-  </p>
-  
-  <p>
-    <%=form.label :job_title %><br/>
-    <%=form.text_field :job_title, class: "form-control" %>
-  </p>
-  
-  <p>
-    <%=form.label :posted_books %><br/>
-    <%=form.number_field :posted_books, class: "form-control" %>
-  </p>
-  
-  <p>
-    <%=form.label :refactored_items %><br/>
-    <%=form.number_field :refactored_items, class: "form-control" %>
-  </p>
-  
-  <p>
-    <%=form.label :note %><br/>
-    <%=form.text_area :note, class: "form-control" %>
-  </p>
-  
-  <p>
-    <%=form.label :date %><br/>
+    <%=form.label :date %>
     <%=form.date_field :date, class: "form-control" %><br/>
   </p>
-  
+    <div class="row">
+      <%=form.label :reporter_identity, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-4">
+        <%=form.text_field :reporter_identity, class: "form-control", placeholder: "Ms. Smith" %>
+      </div>
+      <%=form.label :job_title, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-4">
+        <%=form.text_field :job_title, class: "form-control" %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <%=form.label :posted_books, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-4">
+        <%=form.number_field :posted_books, class: "form-control" %>
+      </div>
+      <%=form.label :refactored_items, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-4">
+        <%=form.number_field :refactored_items, class: "form-control" %>
+      </div>
+    </div>
+
+  <p>
+    <%=form.label :note %>
+    <%=form.text_area :note, class: "form-control" %>
+  </p>
+ 
   <%= link_to_add_nested(form, :acquisition_analytics, '#acquisition-analytics', link_classes: 'btn btn-primary',  link_text: "Add New Acquisition Analytic") %>
   
-  <div id="acquisition-analytics">
+  <div id="acquisition-analytics" class="row">
     <%= form.fields_for :acquisition_analytics do |acq_analytics| %>
       <%= render 'acquisition_analytic_fields', form: acq_analytics %>   
     <% end %>    
   </div>
   <%=form.submit class: "btn btn-success"%>
-    
-  <% end %>
+<% end %>
