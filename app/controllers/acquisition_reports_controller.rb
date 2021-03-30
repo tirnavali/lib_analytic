@@ -44,6 +44,7 @@ class AcquisitionReportsController < ApplicationController
 
     def show
         #@acquisition_report = AcquisitionReport.find(params[:id])
+        @acquisition_analytics_ordered_by_pub_name =  @acquisition_report.acquisition_analytics.includes(:pub_type).order('pub_types.pub_type_name ASC')
     end
     
     def index

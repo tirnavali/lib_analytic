@@ -1,24 +1,35 @@
 <h1>Detaylar</h1>
-<p>
-  <strong>Personal Info: </strong>
-  <%= @acquisition_report.reporter_identity %>
-</p>
-<p>
-  <strong>Job Title: </strong>
-  <%= @acquisition_report.job_title %>
-</p>
-<p>
-  <strong>Posted books: </strong>
-  <%= @acquisition_report.posted_books %>
-</p>
-<p>
-  <strong>Refactored items: </strong>
-  <%= @acquisition_report.refactored_items %>
-</p>
-<p>
-  <strong>Notes: </strong>
-  <%= @acquisition_report.note %>
-</p>
+<table class="table table-sm">
+  <thead>
+    <th>Titles</th>
+    <th>Values</th>
+   </thead>
+  <tbody>
+    <tr>
+      <th>Report Date:</th>
+      <td><%= @acquisition_report.date %></td>
+    </tr>
+    <tr>
+      <th>Personal Info:</th>
+      <td><%= @acquisition_report.reporter_identity %></td>
+    </tr>
+    <tr>
+      <th>Job Title:</th>
+      <td><%= @acquisition_report.job_title %></td>
+    </tr>
+    <tr>
+      <th>Posted books:</th>
+      <td><%= @acquisition_report.posted_books %></td>
+    </tr>
+    <tr>
+      <th>Refactored items: </th>
+      <td><%= @acquisition_report.refactored_items %></td>
+    </tr>
+  </tbody>
+</table>
+<p class="p-1"><strong>Notes:</strong></p>
+<p class= "p-1"><%= @acquisition_report.note %></p> 
+
 <table class="table">
   <thead>
     <th>Publication type</th>
@@ -31,7 +42,7 @@
 
   </thead>
   <tbody>
-  <% @acquisition_report.acquisition_analytics.each do |analytic|  %>
+  <% @acquisition_analytics_ordered_by_pub_name.each do |analytic|  %>
     <tr>
     <td><%= analytic.pub_type %></td>
     <td><%= analytic.pub_arrived_as_supply %></td>

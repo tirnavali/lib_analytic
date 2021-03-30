@@ -1,11 +1,14 @@
 <div>
 <h1>Acquisition Reports</h1>
-<table>
+<table class="table">
   <thead>
     <th>Report Date</th>
     <th>Reporter Identity</th>
     <th>Created At</th>
-    <th>Posted books</th>
+    <th>Posted Books</th>
+    <th>Refactored Items</th>
+    <th></th>
+
 
   </thead>
   <tbody>
@@ -15,7 +18,7 @@
       <td> <%= report.reporter_identity%> </td>
       <td> <%= report.created_at.strftime("%d.%m.%Y | %H:%M")%></td>
       <td class="text-right"> <%= report.posted_books%></td>
-
+      <td class="text-right"> <%= report.refactored_items.nil? ? "-" : report.refactored_items %></td>
       <td> <%= link_to 'Kayıda Git',  acquisition_report_path(report), class: "btn btn-info btn-sm" %> </td>
     </tr>
   <% end %>
