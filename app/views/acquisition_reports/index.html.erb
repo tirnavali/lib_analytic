@@ -14,7 +14,7 @@
   <tbody>
   <% @acquisition_reports.each do |report|%>
     <tr>
-      <td> <%= report.date%> </td>
+      <td><span class="font-size badge badge-warning "> <%= report.date%> </span></td>
       <td> <%= report.reporter_identity%> </td>
       <td> <%= report.created_at.strftime("%d.%m.%Y | %H:%M")%></td>
       <td class="text-right"> <%= report.posted_books%></td>
