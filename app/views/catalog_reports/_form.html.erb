@@ -33,6 +33,7 @@
 
   
   <%= link_to_add_nested(form, :catalog_analytics, '#catalog-analytics', link_classes: 'btn btn-primary',  link_text: "Add New Catalog Analytic") %>
+  
   <div id="catalog-analytics" class="row">
     <%= form.fields_for :catalog_analytics do |catalog_analytic| %>
       <%= render 'catalog_analytic_fields', form: catalog_analytic %>   

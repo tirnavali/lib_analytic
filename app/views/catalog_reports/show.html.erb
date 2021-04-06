@@ -1,24 +1,51 @@
 <p id="notice"><%= notice %></p>
+<h2>Detaylar</h2>
+<table class="table ">
+	<tr>
+		<th>Report date:</th>
+		<td><span class="badge badge-warning"><%=  @catalog_report.report_date %></span></td>
+	</tr>
+		<tr>
+		<th>Reporter</th>
+		<td><span class=""><%= @catalog_report.reporter %></span></td>
+	</tr>
+	</tr>
+		<tr>
+		<th>Reporter title</th>
+		<td><span class=""><%= @catalog_report.reporter_title %></span></td>
+	</tr>
 
-<p>
-  <strong>Report date:</strong>
-  <%= @catalog_report.report_date %>
-</p>
+</table>
+<p class="p-1"><strong>Notes:</strong></p>
+<p class= "p-1"><%= @catalog_report.notes %></p> 
 
-<p>
-  <strong>Reporter:</strong>
-  <%= @catalog_report.reporter %>
-</p>
+<table class="table table-sm">
+	<th>Personel</th>
+	<th>New Entry</th>
 
-<p>
-  <strong>Reporter title:</strong>
-  <%= @catalog_report.reporter_title %>
-</p>
+	<th>Duplicate Entry</th>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @catalog_report.notes %>
-</p>
+	<th>Subject Entry</th>
+	<th>Last Update</th>
+	<th>Time cretaed</th>
+	
+	<% @catalog_report.catalog_analytics.each do |catalog_an| %>
+	<%=  catalog_an.inspect %>
+		<tr>			
+			<td><%= catalog_an.personel%></td>
+			<td><%= catalog_an.new_entry%></td>
+			<td><%= catalog_an.duplicate_entry%></td>
+			<td><%= catalog_an.subject_entry%></td>
+			<td><%= catalog_an.updated_at%></td>
+			<td><%= catalog_an.created_at%></td>
+			
+		</tr>
+		
+	<% end %>
+
+
+</table>
+
 
 <%= link_to 'Edit', edit_catalog_report_path(@catalog_report) %> |
 <%= link_to 'Back', catalog_reports_path %>

@@ -37,7 +37,7 @@ class CatalogReportsController < ApplicationController
     if @catalog_report.update(catalog_report_params)
       redirect_to @catalog_report, notice: 'Catalog report was successfully updated.'
     else
-      render :edit
+      render 'edit'
     end
   end
 
@@ -55,7 +55,18 @@ class CatalogReportsController < ApplicationController
 
      # Only allow a trusted parameter "white list" through.
     def catalog_report_params
-      params.require(:catalog_report).permit(:report_date, :reporter, :reporter_title, :notes,
-      catalog_analytics_attributes: [:id, :new_entry, :duplicate_entry, :subject_entry, :personel_id])
+      params.require(:catalog_report).permit(
+        :report_date, 
+        :reporter, 
+        :reporter_title, 
+        :notes,
+      catalog_analytics_attributes: [
+          :id, 
+          :new_entry, 
+          :duplicate_entry, 
+          :subject_entry, 
+          :personel_id, 
+          :_destroy]
+        )
     end
 end
