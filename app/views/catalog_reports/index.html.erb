@@ -2,7 +2,7 @@
 
 <h1>Catalog Reports</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Report date</th>
@@ -16,13 +16,11 @@
   <tbody>
     <% @catalog_reports.each do |catalog_report| %>
       <tr>
-        <td><%= catalog_report.report_date %></td>
+        <td><span class="badge badge-warning"><%= catalog_report.report_date %></span></td>
         <td><%= catalog_report.reporter %></td>
         <td><%= catalog_report.reporter_title %></td>
-        <td><%= catalog_report.notes %></td>
-        <td><%= link_to 'Show', catalog_report %></td>
-        <td><%= link_to 'Edit', edit_catalog_report_path(catalog_report) %></td>
-        <td><%= link_to 'Destroy', catalog_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= catalog_report.notes[..30]+"..." %></td>
+        <td><%= link_to 'Ayrıntılar', catalog_report, class: "btn btn-info btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Catalog Report', new_catalog_report_path %>
+<%= link_to 'New Catalog Report', new_catalog_report_path, class: "btn btn-primary btn-sm" %>

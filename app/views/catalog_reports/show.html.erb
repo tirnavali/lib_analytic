@@ -19,33 +19,32 @@
 <p class="p-1"><strong>Notes:</strong></p>
 <p class= "p-1"><%= @catalog_report.notes %></p> 
 
-<table class="table table-sm">
-	<th>Personel</th>
-	<th>New Entry</th>
+<% if @catalog_report.catalog_analytics.count > 0 %>
+	<table class="table table-sm">
+		<th>Personel</th>
+		<th>New Entry</th>
 
-	<th>Duplicate Entry</th>
+		<th>Duplicate Entry</th>
 
-	<th>Subject Entry</th>
-	<th>Last Update</th>
-	<th>Time cretaed</th>
-	
-	<% @catalog_report.catalog_analytics.each do |catalog_an| %>
-	<%=  catalog_an.inspect %>
-		<tr>			
-			<td><%= catalog_an.personel%></td>
-			<td><%= catalog_an.new_entry%></td>
-			<td><%= catalog_an.duplicate_entry%></td>
-			<td><%= catalog_an.subject_entry%></td>
-			<td><%= catalog_an.updated_at%></td>
-			<td><%= catalog_an.created_at%></td>
-			
-		</tr>
+		<th>Subject Entry</th>
+		<th>Last Update</th>
+		<th>Time cretaed</th>
 		
-	<% end %>
+		<% @catalog_report.catalog_analytics.each do |catalog_an| %>
+			<tr>			
+				<td><%= catalog_an.personel%></td>
+				<td><%= catalog_an.new_entry%></td>
+				<td><%= catalog_an.duplicate_entry%></td>
+				<td><%= catalog_an.subject_entry%></td>
+				<td><%= catalog_an.updated_at%></td>
+				<td><%= catalog_an.created_at%></td>
+				
+			</tr>
+			
+		<% end %>
+	</table>
+<% end %> 
+<%= link_to 'Geri', catalog_reports_path, class: "btn btn-sm btn-secondary" %>
+<%= link_to 'Düzenle', edit_catalog_report_path(@catalog_report), class: "btn btn-sm btn-warning" %>
+<%= link_to 'Sil', catalog_report_path, method: :delete, data: {confirm: "Emin misiniz?"}, class: "btn btn-sm btn-danger" %>
 
-
-</table>
-
-
-<%= link_to 'Edit', edit_catalog_report_path(@catalog_report) %> |
-<%= link_to 'Back', catalog_reports_path %>
