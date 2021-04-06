@@ -9,4 +9,8 @@ class Personel < ApplicationRecord
   def name_with_initial
     "#{name} - #{surname}"
   end
+
+  def to_s
+    "#{name} - #{surname}"
+  end
 end

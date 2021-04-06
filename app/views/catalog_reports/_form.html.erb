@@ -31,32 +31,17 @@
     <%= form.text_area :notes %>
   </div>
 
-  <%= form.fields_for :catalog_analytics do|analytic_form| %>
-  <div>
-    <%= analytic_form.label :personel %>
-    <%= analytic_form.collection_select(:personel_id, Personel.all, :id, :name_with_initial) %>
+  
+  <%= link_to_add_nested(form, :catalog_analytics, '#catalog-analytics', link_classes: 'btn btn-primary',  link_text: "Add New Catalog Analytic") %>
+  <div id="catalog-analytics" class="row">
+    <%= form.fields_for :catalog_analytics do |catalog_analytic| %>
+      <%= render 'catalog_analytic_fields', form: catalog_analytic %>   
+    <% end %>    
   </div>
-
-  <div>  
-    <%= analytic_form.label :new_entry%>
-    <%= analytic_form.number_field :new_entry%>
-  </div>
-
-  <div>  
-    <%= analytic_form.label :duplicate_entry %>
-    <%= analytic_form.number_field :duplicate_entry, required: "true" %>
-  </div>
-
-  <div>  
-    <%= analytic_form.label :subject_entry %>
-    <%= analytic_form.number_field :subject_entry %>
-  </div>
-
-  <% end %>
 
   <div class="actions">
     <%= form.submit %>
-  </div>
+  </div> 
 
-  <%= link_to :add_catalog,  new_catalog_report_path + "?analytic_form_count=1"%>
+  
 <% end %>
