@@ -22,31 +22,44 @@
 <% if @catalog_report.catalog_analytics.count > 0 %>
 	<table class="table table-sm">
 		<th>Personel</th>
-		<th>New Entry</th>
-		<th>Duplicate Entry</th>
-		<th>Subject Entry</th>
-		<th>tagged_pubs</th>
-		<th>secured_pubs</th>
-		<th>scanned_books</th>
-		<th>scanned_images</th>
-		<th>refactored_records</th>
-		<th>Last Update</th>
-		<th>Time cretaed</th>
+		<th class="text-right">New Entry</th>
+		<th class="text-right">Duplicate Entry</th>
+		<th class="text-right">Subject Entry</th>
+		<th class="text-right">tagged_pubs</th>
+		<th class="text-right">secured_pubs</th>
+		<th class="text-right">scanned_books</th>
+		<th class="text-right">scanned_images</th>
+		<th class="text-right">refactored_records</th>
+		<th class="text-right">Last Update</th>
+		<th class="text-right">Time created</th>
 		<% @catalog_report.catalog_analytics.each do |catalog_an| %>
 			<tr>			
-				<td><%= catalog_an.personel%></td>
-				<td><%= catalog_an.new_entry%></td>
-				<td><%= catalog_an.duplicate_entry%></td>
-				<td><%= catalog_an.subject_entry%></td>
-				<td><%= catalog_an.tagged_pubs%></td>
-				<td><%= catalog_an.secured_pubs%></td>
-				<td><%= catalog_an.scanned_books%></td>
-				<td><%= catalog_an.scanned_images%></td>
-				<td><%= catalog_an.refactored_records%></td>
-				<td><%= catalog_an.updated_at%></td>
-				<td><%= catalog_an.created_at%></td>
+				<td class="text-left"><%= catalog_an.personel%></td>
+				<td class="text-right"><%= catalog_an.new_entry%></td>
+				<td class="text-right"><%= catalog_an.duplicate_entry%></td>
+				<td class="text-right"><%= catalog_an.subject_entry%></td>
+				<td class="text-right"><%= catalog_an.tagged_pubs%></td>
+				<td class="text-right"><%= catalog_an.secured_pubs%></td>
+				<td class="text-right"><%= catalog_an.scanned_books%></td>
+				<td class="text-right"><%= catalog_an.scanned_images%></td>
+				<td class="text-right"><%= catalog_an.refactored_records%></td>
+				<td class="text-right"><%= catalog_an.updated_at%></td>
+				<td class="text-right"><%= catalog_an.created_at%></td>
 			</tr>
 		<% end %>
+		<tr>
+			<th>Toplam: </th>
+			<td class="text-right"><%= @catalog_report.sum(:new_entry) %></td>
+			<td class="text-right"><%= @catalog_report.sum(:duplicate_entry) %></td>	
+			<td class="text-right"><%= @catalog_report.sum(:subject_entry) %></td>	
+			<td class="text-right"><%= @catalog_report.sum(:tagged_pubs) %></td>	
+			<td class="text-right"><%= @catalog_report.sum(:secured_pubs) %></td>	
+			<td class="text-right"><%= @catalog_report.sum(:scanned_books) %></td>
+			<td class="text-right"><%= @catalog_report.sum(:scanned_images) %></td>
+			<td class="text-right"><%= @catalog_report.sum(:refactored_records) %></td>	
+			<td></td>
+			<td></td>		
+		</tr>		
 	</table>
 <% end %> 
 <%= link_to 'Geri', catalog_reports_path, class: "btn btn-sm btn-secondary" %>
