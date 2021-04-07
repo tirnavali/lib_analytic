@@ -15,7 +15,28 @@
     <p>
       <%= form.label :subject_entry%>
       <%= form.number_field :subject_entry , class: "form-control"%>
+    </p>
+    <p>
+      <%= form.label :tagged_pubs%>
+      <%= form.number_field :tagged_pubs , class: "form-control"%>
+    </p> 
+    <p>
+      <%= form.label :secured_pubs%>
+      <%= form.number_field :secured_pubs , class: "form-control"%>
+    </p> 
+    <p>
+      <%= form.label :scanned_books%>
+      <%= form.number_field :scanned_books , class: "form-control"%>
     </p>    
+    <p>
+      <%= form.label :scanned_images%>
+      <%= form.number_field :scanned_images , class: "form-control"%>
+    </p>
+    <p>
+      <%= form.label :refactored_records%>
+      <%= form.number_field :refactored_records , class: "form-control"%>
+    </p> 
+
     <p>
        <%= link_to_remove_nested(form, fields_wrapper_selector: '.wrapper-div', link_text: "Remove Catalog Analytic", link_classes: 'btn btn-danger') %>
     </p>   

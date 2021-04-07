@@ -64,7 +64,12 @@ class CatalogReportsController < ApplicationController
           :id, 
           :new_entry, 
           :duplicate_entry, 
-          :subject_entry, 
+          :subject_entry,
+          :tagged_pubs,
+          :secured_pubs,
+          :scanned_books,
+          :scanned_images,
+          :refactored_records,
           :personel_id, 
           :_destroy]
         )
