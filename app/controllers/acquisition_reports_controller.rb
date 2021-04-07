@@ -22,7 +22,7 @@ class AcquisitionReportsController < ApplicationController
       @acquisition_report = AcquisitionReport.new(acquisition_report_params)
 
       if @acquisition_report.save 
-        redirect_to @acquisition_report
+        redirect_to @acquisition_report, notice: "Acqisition report was successfully created."
       else
         render :new
       end
@@ -30,7 +30,7 @@ class AcquisitionReportsController < ApplicationController
 
     def update
       if @acquisition_report.update(acquisition_report_params)
-        redirect_to @acquisition_report
+        redirect_to @acquisition_report, notice: "Acqisition report was successfully updated."
       else
         render 'edit'
       end
@@ -38,7 +38,7 @@ class AcquisitionReportsController < ApplicationController
 
     def destroy
       @acquisition_report.destroy
-      redirect_to acquisition_reports_path
+      redirect_to acquisition_reports_path, notice: "Acqisition report has been deleted."
     end
 
     private
