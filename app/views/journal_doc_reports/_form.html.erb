@@ -1,3 +1,4 @@
+
 <%= form_with(model: journal_doc_report, local: true) do |form| %>
   <% if journal_doc_report.errors.any? %>
     <div id="error_explanation">
@@ -10,81 +11,58 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :journal_count %>
-    <%= form.number_field :journal_count %>
-  </div>
-
-  <div class="field">
-    <%= form.label :document_count %>
-    <%= form.number_field :document_count %>
-  </div>
-
-  <div class="field">
-    <%= form.label :unique_subjects_given %>
-    <%= form.number_field :unique_subjects_given %>
-  </div>
-
-  <div class="field">
-    <%= form.label :unique_author_given %>
-    <%= form.number_field :unique_author_given %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author_given %>
-    <%= form.number_field :author_given %>
-  </div>
-
-   <div class="field">
-    <%= form.label :reporter %>
-    <%= form.text_field :reporter %>
-  </div>
-
-  <div class="field">
-    <%= form.label :report_date %>
-    <%= form.date_select :report_date %>
-  </div>
-
-
-  <%= form.fields_for :journal_doc_analytics do |analytics| %>
-    <div style="border: 2px solid red">
+  <div class="row">
+    <div class="col-3">
     <div class="field">
-      <%= analytics.label :select_personel %>
-      <%#= analytics.number_field :personel_id%>    
-      <%= analytics.collection_select(:personel_id, Personel.all, :id, :name_with_initial, {}, disabled: false) %>       
+      <%= form.label :report_date %>
+      <%= form.date_field :report_date, class: "form-control form-control-sm" %>
     </div>
-    
-      <div class="field">
-        <%= analytics.label :report_date %>
-        <%= analytics.date_field :report_date, title: "deneme" %>
-      </div>
-    
-      <div class="field">
-        <%= analytics.label :new_entry %>
-        <%= analytics.number_field :new_entry %>
-      </div>
-    
-      <div class="field">
-        <%= analytics.label :updated_entry %>
-        <%= analytics.number_field :updated_entry %>
-      </div>
-    
-      <div class="field">
-        <%= analytics.label :new_author %>
-        <%= analytics.number_field :new_author %>
-      </div>
-    
-      <div class="field">
-        <%= analytics.label :new_subject %>
-        <%= analytics.number_field :new_subject %>
-      </div>  
-      Delete record: <%=analytics.check_box :_destroy%>        
+  </div>
+  <div class="col-3">
+    <div class="">
+      <%= form.label :journal_count, class: "form-label" %>
+      <%= form.number_field :journal_count, class: "form-control form-control-sm" %>
     </div>
-    
-    <% end %>
+  
+    <div class="field">
+      <%= form.label :document_count %>
+      <%= form.number_field :document_count, class: "form-control form-control-sm" %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :unique_subjects_given %>
+      <%= form.number_field :unique_subjects_given, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+    <div class="col-3">
+  
+    <div class="field">
+      <%= form.label :unique_author_given %>
+      <%= form.number_field :unique_author_given, class: "form-control form-control-sm" %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :author_given %>
+      <%= form.number_field :author_given, class: "form-control form-control-sm" %>
+    </div>
+  
+     <div class="field">
+      <%= form.label :reporter %>
+      <%= form.text_field :reporter, class: "form-control form-control-sm" %>
+    </div>
+  </div>    
+</div>
+  <%= link_to_add_nested(form, :journal_doc_analytics, '#journal-doc-analytics', link_classes: 'btn btn-primary',  link_text: "Add New Journal Doc. Analytic") %>
+
+  <div id="journal-doc-analytics" class="row">
+    <%= form.fields_for :journal_doc_analytics do |journal_doc_analytic| %>
+      <%= render 'journal_doc_analytic_fields', form: journal_doc_analytic %>   
+    <% end %>    
+  </div>
+
+
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success" %>
   </div>
 <% end %>

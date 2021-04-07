@@ -1,0 +1,35 @@
+<%= form.fields_for :journal_doc_analytics do |analytics| %>
+  <div class="wrapper-div col-16 p-3">
+    <div class="field">
+      <%= analytics.label :select_personel %>
+      <%= analytics.collection_select(:personel_id, Personel.all, :id, :name_with_initial, {}, {class: "form-control form-control-sm"}) %>
+    </div>
+    <div class="field">
+      <%= analytics.label :report_date %>
+      <%= analytics.date_field :report_date, class: "form-control form-control-sm" %>
+    </div>
+     
+    <div class="field">
+      <%= analytics.label :new_entry, class: "form-label" %>
+      <%= analytics.number_field :new_entry , class: "form-control form-control-sm"%>
+    </div>
+      
+    <div class="field">
+      <%= analytics.label :updated_entry, class: "form-label" %>
+      <%= analytics.number_field :updated_entry, class: "form-control form-control-sm" %>
+    </div>
+      
+    <div class="field">
+      <%= analytics.label :new_author, class: "form-label" %>
+      <%= analytics.number_field :new_author, class: "form-control form-control-sm" %>
+    </div>
+    
+    <div class="field">
+      <%= analytics.label :new_subject, class: "form-label" %>
+      <%= analytics.number_field :new_subject, class: "form-control form-control-sm" %>
+    </div>
+    <p>
+      <%= link_to_remove_nested(form, fields_wrapper_selector: '.wrapper-div', link_text: "Remove Journal Doc.  Analytic", link_classes: 'btn btn-danger') %>
+    </p>   
+  </div>  
+<% end %>
