@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_112058) do
+ActiveRecord::Schema.define(version: 2021_04_07_090031) do
 
   create_table "acquisition_analytics", force: :cascade do |t|
     t.integer "acquisition_report_id", null: false
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 2021_03_01_112058) do
     t.integer "personel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tagged_pubs"
+    t.integer "secured_pubs"
+    t.integer "scanned_books"
+    t.integer "scanned_images"
+    t.integer "refactored_records"
     t.index ["catalog_report_id"], name: "index_catalog_analytics_on_catalog_report_id"
     t.index ["personel_id"], name: "index_catalog_analytics_on_personel_id"
   end
@@ -162,6 +167,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_112058) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "roles"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
