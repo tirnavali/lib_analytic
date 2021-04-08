@@ -2,7 +2,7 @@
 
 <h1>Reference Analytics</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Reporter</th>
@@ -20,7 +20,7 @@
         <td><%= reference_analytic.report_date %></td>
         <td><%= reference_analytic.user_from_out %></td>
         <td><%= reference_analytic.user_from_inside %></td>
-        <td><%= link_to 'Show', reference_analytic %></td>
+        <td><%= link_to 'Show', reference_analytic, class: "btn btn-sm btn-info" %></td>
         <td><%= link_to 'Edit', edit_reference_analytic_path(reference_analytic) %></td>
         <td><%= link_to 'Destroy', reference_analytic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Reference Analytic', new_reference_analytic_path %>
+<%= link_to 'New Reference Analytic', new_reference_analytic_path, class: "btn btn-sm btn-primary" %>

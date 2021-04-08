@@ -59,5 +59,6 @@
 </tbody>
 </table>
 
-<%= link_to 'Edit', edit_journal_doc_report_path(@journal_doc_report) %> |
+<%= link_to 'Edit', edit_journal_doc_report_path(@journal_doc_report) %>
 <%= link_to 'Back', journal_doc_reports_path %>
+<%= link_to 'Destroy', @journal_doc_report, method: :delete, data: { confirm: 'Are you sure?' } %>

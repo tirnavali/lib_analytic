@@ -30,5 +30,6 @@
   <%= @reference_analytic.user_from_inside %>
 </p>
 
-<%= link_to 'Edit', edit_reference_analytic_path(@reference_analytic) %> |
-<%= link_to 'Back', reference_analytics_path %>
+<%= link_to 'Edit', edit_reference_analytic_path(@reference_analytic), class: "btn btn-sm btn-warning" %>
+<%= link_to 'Back', reference_analytics_path, class: "btn btn-sm btn-secondary" %>
+<%= link_to 'Destroy', @reference_analytic, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure?'} %>
