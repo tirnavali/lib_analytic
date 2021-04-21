@@ -23,10 +23,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/"><%= t(:home).capitalize %><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<%=acquisition_reports_path%>">Acquisition Reports</a>
+        <a class="nav-link" href="<%=acquisition_reports_path%>"><%=t(:acquisition_reports).capitalize%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%=reference_analytics_path%>">Reference Reports</a>

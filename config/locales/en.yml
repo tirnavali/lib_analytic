@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  home: "home"
+  acquisition_reports: "acquisition reports"
+  
+tr:
+  hello: "merhaba"
+  home: "anasayfa"
+  acquisition_reports: "sağlama raporları"
