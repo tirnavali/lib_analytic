@@ -1,0 +1,11 @@
+tr:
+  login: "giriş"
+  logout: "çıkış"
+  hello: "merhaba"
+  home: "anasayfa"
+  acquisition_reports: "sağlama raporları"
+  reference_reports: "danışma raporları"
+  catalog_reports: "katalog raporları"
+  journal_documentation_reports: "dergi dökümantasyon raporları"
+  personel: "personel"
+  departments: "birimler"

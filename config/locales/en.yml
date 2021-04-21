@@ -30,11 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  login: "login"
+  logout: "logout"
   hello: "Hello world"
   home: "home"
   acquisition_reports: "acquisition reports"
-  
-tr:
-  hello: "merhaba"
-  home: "anasayfa"
-  acquisition_reports: "sağlama raporları"
+  reference_reports: "reference reports"
+  catalog_reports: "catalog reports"
+  journal_documentation_reports: "journal documentation reports"
+  personel: "personnel"
+  departments: "departments"

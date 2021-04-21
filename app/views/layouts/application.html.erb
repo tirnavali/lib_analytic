@@ -29,17 +29,17 @@
         <a class="nav-link" href="<%=acquisition_reports_path%>"><%=t(:acquisition_reports).capitalize%></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<%=reference_analytics_path%>">Reference Reports</a>
+        <a class="nav-link" href="<%=reference_analytics_path%>"><%=t(:reference_reports).capitalize%></a>
       </li>
       
       <% if user_signed_in? %>
       <li class="nav-item">        
         
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete,  class: "nav-link" %>
+        <%= link_to t(:logout).capitalize, destroy_user_session_path, method: :delete,  class: "nav-link" %>
       </li>
       <% else %>
       <li class="nav-item">        
-        <a class="nav-link " href="<%=new_user_session_path%>">Login</a>
+        <a class="nav-link " href="<%=new_user_session_path%>"><%=t(:login).capitalize%></a>
       </li>
       <% end %>
     </ul>
@@ -48,13 +48,13 @@
   <div class="row">
     <div class="col col-sm-2 col-md-2">
       <nav class="nav flex-column">
-        <a class="nav-link active" href="/">Home</a>
-        <a class="nav-link" href="<%=acquisition_reports_path%>">Acquisition Reports</a>
-        <a class="nav-link" href="<%=catalog_reports_path%>">Catalog Reports</a>
-        <a class="nav-link" href="<%=reference_analytics_path%>">Reference Reports</a>
-        <a class="nav-link" href="<%=journal_doc_reports_path%>">Journal Documentation Reports</a>
-        <a class="nav-link " href="<%=personels_path%>">Personels</a>
-        <a class="nav-link " href="<%=departments_path%>">Departments</a>
+        <a class="nav-link active" href="/"><%= t(:home).capitalize %></a>
+        <a class="nav-link" href="<%=acquisition_reports_path%>"><%=t(:acquisition_reports).capitalize%></a>
+        <a class="nav-link" href="<%=catalog_reports_path%>"><%=t(:catalog_reports).capitalize%></a>
+        <a class="nav-link" href="<%=reference_analytics_path%>"><%=t(:reference_reports).capitalize%></a>
+        <a class="nav-link" href="<%=journal_doc_reports_path%>"><%=t(:journal_documentation_reports).capitalize%></a>
+        <a class="nav-link " href="<%=personels_path%>"><%=t(:personel).capitalize%></a>
+        <a class="nav-link " href="<%=departments_path%>"><%=t(:departments).capitalize%></a>
       </nav>
     </div>
     <div class="col col-sm-10 col-md-10">
