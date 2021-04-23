@@ -1,4 +1,9 @@
 tr:
+  add: "ekle"
+  add_analytic: "analitik ekle"
+  date: "tarih"
+  delete: "sil"
+  edit: "düzenle"
   login: "giriş"
   logout: "çıkış"
   hello: "merhaba"
@@ -8,4 +13,7 @@ tr:
   catalog_reports: "katalog raporları"
   journal_documentation_reports: "dergi dökümantasyon raporları"
   personel: "personel"
+  remove: "kaldır"
+  save: "kaydet"
   departments: "birimler"
+

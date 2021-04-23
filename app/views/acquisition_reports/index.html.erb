@@ -1,12 +1,15 @@
 <div>
-<h1>Acquisition Reports</h1>
+<h1>Acquisition Reports</h1> 
+<div class="control-panel">
+  <%= link_to t(:add).titleize, new_acquisition_report_path, class: "btn btn-primary btn-sm col-2 form-control mb-2 mt-2"%>
+</div>
 <table class="table">
   <thead>
-    <th>Report Date</th>
-    <th>Reporter Identity</th>
-    <th>Created At</th>
-    <th>Posted Books</th>
-    <th>Refactored Items</th>
+    <th><%= t(:report_date).titleize %></th>
+    <th><%= t(:reporter_identity).titleize %></th>
+    <th><%= t(:created_at).titleize %></th>
+    <th class="text-right"><%= t(:posted_books).titleize %></th>
+    <th class="text-right"><%= t(:refactored_items).titleize %></th>
     <th></th>
 
 
@@ -25,6 +28,6 @@
   </tbody>
 </table>
 <p>
-  <%= link_to 'New Acquisition Report', new_acquisition_report_path, class: "btn btn-primary btn-sm"%>
+  
 </p>
 </div>

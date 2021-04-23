@@ -1,0 +1,18 @@
+en:
+  report_date: "report date"
+  reporter_identity: "reporter identity"
+  created_at: "created at"
+  updated_at: "updated at"
+  job_title: "job title"
+  posted_books: "posted books"
+  refactored_items: "refactored items"
+  note: "note"
+  
+  pub_type: "publication type"
+  pub_arrived_as_supply: "arrived as supply"
+  pub_arrived_as_gift: "arrived as gift"
+  
+  pub_bought: "pub bought"
+  pub_saved_as_supply: "saved as supply"
+  pub_saved_as_gift: "saved as gift"
+  pub_saved_as_old: "saved as old"

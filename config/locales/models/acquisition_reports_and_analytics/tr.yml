@@ -1,0 +1,18 @@
+tr:
+  report_date: "rapor tarihi"
+  reporter_identity: "raporu oluşturan"
+  created_at: "oluşturulma tarihi"
+  updated_at: "güncellenme tarihi"
+  job_title: "ünvan"
+  posted_books: "giden yayınlar"
+  refactored_items: "yeniden düzenlenen yayınlar"
+  note: "not"
+  
+  pub_type: "yayın türü"
+  pub_arrived_as_supply: "derlemeden gelen"
+  pub_arrived_as_gift: "hediye gelen"
+  
+  pub_bought: "satın alınan"
+  pub_saved_as_supply: "derlemeden koleksiyona alınan"
+  pub_saved_as_gift: "hediyelerden koleksiyona alınan"
+  pub_saved_as_old: "yeniden düzenlenen/ciltlenen (eski)"
