@@ -1,5 +1,6 @@
 class EmploymentsController < ApplicationController
   before_action :set_employment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /employments
   # GET /employments.json

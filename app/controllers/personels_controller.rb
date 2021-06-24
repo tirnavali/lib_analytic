@@ -1,5 +1,6 @@
 class PersonelsController < ApplicationController
   before_action :set_personel, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :reset_form_size, except: [:edit]
   attr_accessor :form_size
   @form_size = 0

@@ -1,5 +1,7 @@
 class JournalDocAnalyticsController < ApplicationController
   before_action :set_journal_doc_analytic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+
   #before_action :get_all_person_list, only: [:edit, :new]
 
   # GET /journal_doc_analytics

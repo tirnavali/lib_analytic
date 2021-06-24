@@ -1,5 +1,6 @@
 class CatalogReportsController < ApplicationController
   before_action :set_catalog_report, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 #  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
   # GET /catalog_reports

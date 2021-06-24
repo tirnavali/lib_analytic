@@ -1,5 +1,6 @@
 class ReferenceAnalyticsController < ApplicationController
   before_action :set_reference_analytic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /reference_analytics
   # GET /reference_analytics.json

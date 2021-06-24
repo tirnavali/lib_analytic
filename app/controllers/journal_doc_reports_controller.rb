@@ -1,5 +1,6 @@
 class JournalDocReportsController < ApplicationController
   before_action :set_journal_doc_report, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /journal_doc_reports
   # GET /journal_doc_reports.json
