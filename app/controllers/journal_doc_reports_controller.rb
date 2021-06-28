@@ -5,7 +5,7 @@ class JournalDocReportsController < ApplicationController
   # GET /journal_doc_reports
   # GET /journal_doc_reports.json
   def index
-    @journal_doc_reports = JournalDocReport.all
+    @journal_doc_reports = JournalDocReport.order(:report_date).page(params[:page])
   end
 
   # GET /journal_doc_reports/1

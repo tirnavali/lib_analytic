@@ -5,7 +5,7 @@ class ReferenceAnalyticsController < ApplicationController
   # GET /reference_analytics
   # GET /reference_analytics.json
   def index
-    @reference_analytics = ReferenceAnalytic.all
+    @reference_analytics = ReferenceAnalytic.order(:report_date).page(params[:page])
   end
 
   # GET /reference_analytics/1

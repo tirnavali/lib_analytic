@@ -5,7 +5,7 @@ class CatalogReportsController < ApplicationController
 
   # GET /catalog_reports
   def index
-    @catalog_reports = CatalogReport.all
+    @catalog_reports = CatalogReport.order(:report_date).page(params[:page])
   end
 
   # GET /catalog_reports/1
