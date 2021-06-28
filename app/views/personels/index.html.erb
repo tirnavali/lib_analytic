@@ -46,6 +46,9 @@
 <tbody id="personels">
 <%= render @personels %>
 </tbody>
+<div class="d-flex justify-content-center">
+<%= paginate @personels %> 
+</div>
 <br>
 <%= link_to 'ORDER', personels_path(order: :asc) %>
 <%= link_to 'ORDER desc', personels_path(order: :desc) %>

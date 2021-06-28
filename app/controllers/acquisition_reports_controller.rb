@@ -4,7 +4,7 @@ class AcquisitionReportsController < ApplicationController
   #before_action :reset_form_size, except: [:edit, :new]
 
     def index
-      @acquisition_reports = AcquisitionReport.all
+      @acquisition_reports = AcquisitionReport.order(:date).page(params[:page])
     end
 
     def show

@@ -12,7 +12,7 @@ class PersonelsController < ApplicationController
     unless ["asc", "desc"].one? params[:order]
       params[:order] = "asc"
     end
-    @personels = Personel.all.order(name: params[:order])
+    @personels = Personel.order(:name).page(params[:page])
     @personel = Personel.new
   end
 

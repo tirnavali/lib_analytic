@@ -26,8 +26,9 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 # gem 'bcrypt', '~> 3.1.7'
 # authorization gem
 gem 'petergate', '~> 2.0', '>= 2.0.1'
-
-#Nested form helper
+# pagination
+gem 'kaminari', '1.2.0'
+# Nested form helper
 gem 'vanilla_nested'
 
 # Use Active Storage variant
