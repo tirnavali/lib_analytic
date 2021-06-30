@@ -21,7 +21,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="d-flex justify-content-center">
+<%= paginate @departments %>
+</div>
 <br>
 
 <%= link_to 'New Department', new_department_path %>

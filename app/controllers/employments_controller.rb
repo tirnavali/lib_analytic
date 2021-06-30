@@ -5,7 +5,7 @@ class EmploymentsController < ApplicationController
   # GET /employments
   # GET /employments.json
   def index
-    @employments = Employment.all
+    @employments = Employment.order(:department_id).page(params[:page])
   end
 
   # GET /employments/1
