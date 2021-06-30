@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   get 'welcome/index'
   get 'welcome/index/:id', to: 'welcome#counter'
+  get 'users', to: 'users#index'
   resources :employments
   resources :departments
   resources :journal_doc_reports

@@ -45,9 +45,9 @@
     </ul>
   </div>
 </nav>
-  <div class="row">
+  <div class="row" >
     <div class="col col-sm-2 col-md-2">
-      <nav class="nav flex-column">
+      <nav class="nav flex-column " style="background-color: gray">
         <a class="nav-link active" href="/"><%= t(:home).capitalize %></a>
         <a class="nav-link" href="<%=acquisition_reports_path%>"><%=t(:acquisition_reports).capitalize%></a>
         <a class="nav-link" href="<%=catalog_reports_path%>"><%=t(:catalog_reports).capitalize%></a>
@@ -56,6 +56,7 @@
         <a class="nav-link " href="<%=personels_path%>"><%=t(:personel).capitalize%></a>
         <a class="nav-link " href="<%=departments_path%>"><%=t(:departments).capitalize%></a>
         <a class="nav-link " href="<%=employments_path%>"><%=t(:employments).capitalize%></a>
+        <a class="nav-link " href="<%=users_path%>"><%=t(:users).capitalize%></a>
       </nav>
     </div>
     <div class="col col-sm-10 col-md-10">
