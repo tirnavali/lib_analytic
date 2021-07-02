@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :catalog_reports
-  devise_for :users
+  devise_for :users, controllers: 
+    { sessions: 'users/sessions',
+      registrations: 'users/registrations'}
   root to: 'welcome#index'
   get 'welcome/index'
   get 'welcome/index/:id', to: 'welcome#counter'
