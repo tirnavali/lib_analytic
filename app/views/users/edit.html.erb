@@ -1,0 +1,35 @@
+<%= form_with model: @user, url: myuser_path, local: true do |form| %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%=form.label :email%>
+    <%=form.email_field :email%>
+  </div>
+  <div class="field">
+    <%=form.label :current_password%>
+    <%=form.password_field :current_password%>
+  </div>
+
+  <div class="field">
+    <%=form.label :password%>
+    <%=form.label :leave_blank, '(Leave blank if you do not change)' %>
+    <%=form.password_field :password%>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation, "Confirm new password" %>
+    <%=form.label :leave_blank, '(Leave blank if you do not change)' %>
+    <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <%=form.submit%>
+<% end %>

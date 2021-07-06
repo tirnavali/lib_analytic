@@ -42,7 +42,12 @@
         <a class="nav-link " href="<%=new_user_session_path%>"><%=t(:login).capitalize%></a>
       </li>
       <% end %>
+      <% if current_user %>
+        <li class="nav-item nav-link"><%= current_user.email %></li>
+      <% end %>
+
     </ul>
+
   </div>
 </nav>
   <div class="row" >
