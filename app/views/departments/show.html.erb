@@ -4,6 +4,19 @@
   <strong>Name:</strong>
   <%= @department.name %>
 </p>
+<p>
+  <strong>Reports</strong>
+  <%= @department.reference_analytics.name %>
+  <% @department.reference_analytics.each do |analytic| %>
+    <%=analytic.report_date%>
+  <% end %>
+</p>
+<p>
+  <strong>Personnels:</strong>
+  <% @department.personels.each do |person| %>
+    </br><%=person.name + " - "+ person.surname%>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>

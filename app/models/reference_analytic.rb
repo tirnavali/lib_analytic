@@ -1,8 +1,8 @@
 class ReferenceAnalytic < ApplicationRecord
-    belongs_to :department
-    before_save :set_department
+  belongs_to :department
+  before_validation :set_department
 
   def set_department
-    self.department= Department.find_by_name "Kataloglama Birimi"
+    self.department= Department.find_by_name "Danışma Birimi"
   end
 end

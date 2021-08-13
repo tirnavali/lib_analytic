@@ -103,6 +103,7 @@ class ReferenceAnalyticsController < ApplicationController
         :digitalized_pages,
         :photocopy_income,
         :notes,
-        :department_id)
+        )
+        #:department_id
     end
 end
