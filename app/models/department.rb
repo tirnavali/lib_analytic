@@ -1,7 +1,7 @@
 class Department < ApplicationRecord
     has_many :employments
     has_many :personels, through: :employments
-    has_one :reference_analytics
+    has_many :reference_analytics, dependent: :destroy
     has_one :acquisition_report
     has_one :catalog_report
     has_one :journal_doc_report
@@ -16,4 +16,5 @@ class Department < ApplicationRecord
     def to_s
       "#{name}"
     end
+   
 end
