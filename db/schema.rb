@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_090031) do
+ActiveRecord::Schema.define(version: 2021_08_13_090242) do
 
   create_table "acquisition_analytics", force: :cascade do |t|
     t.integer "acquisition_report_id", null: false
@@ -157,6 +157,8 @@ ActiveRecord::Schema.define(version: 2021_04_07_090031) do
     t.float "photocopy_income"
     t.text "notes"
     t.string "reporter_job_title"
+    t.integer "department_id"
+    t.index ["department_id"], name: "index_reference_analytics_on_department_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -179,4 +181,5 @@ ActiveRecord::Schema.define(version: 2021_04_07_090031) do
   add_foreign_key "employments", "departments"
   add_foreign_key "employments", "personels"
   add_foreign_key "journal_doc_analytics", "personels"
+  add_foreign_key "reference_analytics", "departments"
 end

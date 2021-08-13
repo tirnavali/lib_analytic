@@ -102,6 +102,7 @@ class ReferenceAnalyticsController < ApplicationController
         :photocopy_a3_paid,
         :digitalized_pages,
         :photocopy_income,
-        :notes)
+        :notes,
+        :department_id)
     end
 end
