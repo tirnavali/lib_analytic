@@ -12,9 +12,9 @@
   <% end %>
 </p>
 <p>
-  <strong>Personnels:</strong>
-  <% @department.personels.each do |person| %>
-    </br><%=person.name + " - "+ person.surname%>
+  <strong>Current Personnel:</strong>
+  <% @department.current_employments.each do |employment| %>
+    </br><%=employment.personel.name + " - "+ employment.personel.surname%>
   <% end %>
 </p>
 

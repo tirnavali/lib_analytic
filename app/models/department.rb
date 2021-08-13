@@ -8,13 +8,18 @@ class Department < ApplicationRecord
     
 
     validates_presence_of :name
-
+   
     def name_with_initial
       "#{name}"
     end
 
     def to_s
       "#{name}"
+    end
+
+    def current_employments
+      self.employments.where(employments: {end_date: nil}).joins(:personel)
+      #self.employments.find_by_end_date(nil)      
     end
    
 end
