@@ -2,7 +2,7 @@
   <div class="wrapper-div col-16 p-3">    
     <p>
       <%=form.label :select_personel%>
-      <%=form.collection_select(:personel_id, Personel.all, :id, :to_s, {}, {class: "form-control form-control-sm"}) %>    
+      <%=form.collection_select(:personel_id, Personel.current_department('Kataloglama Birimi'), :id, :to_s, {}, {class: "form-control form-control-sm"}) %>    
     </p>
     <p>
       <%= form.label :new_entry%>
