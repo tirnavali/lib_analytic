@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-  	if params[:name]
-  		@name = params[:name]
+  	if @user
+  		@name = @user.email
   	else
   		@name = "Unknown Person"
   	end
