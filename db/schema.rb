@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_08_13_090242) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "acquisition_analytics", force: :cascade do |t|
-    t.integer "acquisition_report_id", null: false
+    t.bigint "acquisition_report_id", null: false
     t.integer "pub_arrived_as_supply"
     t.integer "pub_arrived_as_gift"
     t.integer "pub_bought"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_08_13_090242) do
     t.integer "pub_saved_as_old"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pub_type_id"
+    t.bigint "pub_type_id"
     t.index ["acquisition_report_id"], name: "index_acquisition_analytics_on_acquisition_report_id"
     t.index ["pub_type_id"], name: "index_acquisition_analytics_on_pub_type_id"
   end
@@ -42,8 +45,8 @@ ActiveRecord::Schema.define(version: 2021_08_13_090242) do
     t.integer "new_entry"
     t.integer "duplicate_entry"
     t.integer "subject_entry"
-    t.integer "catalog_report_id", null: false
-    t.integer "personel_id", null: false
+    t.bigint "catalog_report_id", null: false
+    t.bigint "personel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "tagged_pubs"
@@ -71,8 +74,8 @@ ActiveRecord::Schema.define(version: 2021_08_13_090242) do
   end
 
   create_table "employments", force: :cascade do |t|
-    t.integer "personel_id", null: false
-    t.integer "department_id", null: false
+    t.bigint "personel_id", null: false
+    t.bigint "department_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
@@ -91,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_08_13_090242) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "personel_id"
-    t.integer "journal_doc_report_id"
+    t.bigint "journal_doc_report_id"
     t.index ["journal_doc_report_id"], name: "index_journal_doc_analytics_on_journal_doc_report_id"
     t.index ["personel_id"], name: "index_journal_doc_analytics_on_personel_id"
   end
@@ -157,7 +160,7 @@ ActiveRecord::Schema.define(version: 2021_08_13_090242) do
     t.float "photocopy_income"
     t.text "notes"
     t.string "reporter_job_title"
-    t.integer "department_id"
+    t.bigint "department_id"
     t.index ["department_id"], name: "index_reference_analytics_on_department_id"
   end
 

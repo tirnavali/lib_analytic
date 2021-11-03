@@ -30,6 +30,8 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'kaminari', '1.2.0'
 # Nested form helper
 gem 'vanilla_nested'
+#
+gem 'pg', '1.2.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
