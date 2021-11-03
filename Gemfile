@@ -29,9 +29,9 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 # pagination
 gem 'kaminari', '1.2.0'
 # Nested form helper
-gem 'vanilla_nested'
+gem 'vanilla_nested', '>= 1.4.0'
 #
-gem 'pg', '1.2.3'
+gem 'pg', '>= 1.2.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
