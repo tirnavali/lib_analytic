@@ -17,6 +17,7 @@ tr:
   save: "kaydet"
   departments: "birimler"
   employments: "çalışanlar"
+  users: "kullanıcılar"
 
 
   views:
