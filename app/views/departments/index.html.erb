@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Departments</h1>
-
+<div class="control-panel">  
+  <%= link_to t(:add).titleize , new_department_path, class: "btn btn-primary btn-sm col-2 form-control mb-2 mt-2" %>
+</div>
 <table>
   <thead>
     <tr>
@@ -26,4 +28,4 @@
 </div>
 <br>
 
-<%= link_to 'New Department', new_department_path %>
+

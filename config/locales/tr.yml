@@ -12,6 +12,7 @@ tr:
   reference_reports: "danışma raporları"
   catalog_reports: "katalog raporları"
   journal_documentation_reports: "dergi dökümantasyon raporları"
+  journal_doc_reports: "dergi dökümantasyon raporları"
   personel: "personel"
   remove: "kaldır"
   save: "kaydet"

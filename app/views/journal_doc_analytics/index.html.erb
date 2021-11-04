@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="control-panel">  
+  <%= link_to t(:add).titleize , new_journal_doc_analytic_path, class: "btn btn-primary btn-sm col-2 form-control mb-2 mt-2" %>
+</div>
 <h1>Journal Doc Analytics</h1>
 
 <table>
@@ -34,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Journal Doc Analytic', new_journal_doc_analytic_path %>
+

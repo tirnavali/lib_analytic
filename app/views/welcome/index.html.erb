@@ -1,9 +1,5 @@
-<h1>Welcome to library analytics <%= @name %></h1>
-<span><%=Time.now.strftime("%d/%m/%Y %H:%M") %></span>
-<form method="GET">
-    <input type="text" name="name" value=""></input>
-    <button>Selamla</button>
-</form>
+<h1>Library Analytics <%= @name %></h1>
+Sunucu saati: <span><%=Time.now.strftime("%d/%m/%Y %H:%M") %></span>
 <div>
     <li>
         <span>Referans analitikleri:</span> <%=@referance_analytics_count%>

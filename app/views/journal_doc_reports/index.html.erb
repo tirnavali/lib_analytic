@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
+<h1><%=t(:journal_doc_reports).titleize %></h1>
+<div class="control-panel">  
+  <%= link_to t(:add).titleize , new_journal_doc_report_path, class: "btn btn-primary btn-sm col-2 form-control mb-2 mt-2" %>
+</div>
 
-<h1>Journal Doc Reports</h1>
 
 <table class="table">
   <thead>
@@ -40,4 +43,3 @@
 
 <br>
 
-<%= link_to 'New Journal Doc Report', new_journal_doc_report_path, class: "btn btn-primary btn-sm" %>

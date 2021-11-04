@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Reference Analytics</h1>
-
+<h1><%=t(:reference_reports).titleize %></h1>
+<div class="control-panel">  
+  <%= link_to t(:add).titleize , new_reference_analytic_path, class: "btn btn-primary btn-sm col-2 form-control mb-2 mt-2" %>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -33,4 +34,3 @@
 
 <br>
 
-<%= link_to 'New Reference Analytic', new_reference_analytic_path, class: "btn btn-sm btn-primary" %>
